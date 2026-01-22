@@ -11376,3 +11376,20 @@ WCCOAui      (1), 2026.01.22 16:15:59.566, CTRL, WARNING,   116, Library:/group/
 WCCILpmon    (1), 2026.01.22 16:16:01.702, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
 WCCILpmon    (1), 2026.01.22 16:16:01.794, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
 WCCOAtoolLogViewer(1), 2026.01.22 16:16:22.314, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCILevent   (0), 2026.01.22 16:25:56.287, SYS,  INFO,      108, License information, License changed
+
+version     = 32000000
+sn          = "CodeMeter sn:130-1382261589"
+expire      = 0000.00.00;00:00:00,000 
+ui          = 2
+para        = 1
+event       = 1
+ios         = 2000000000
+ssi         = 0
+archive     = 3
+ctrl        = 4
+distributed = 1
+opc_ua_client = 1
+update      = 0
+
+
