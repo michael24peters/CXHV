@@ -1,0 +1,98 @@
+class: $FWPART_$TOP$FwMode_CLASS
+!panel: FwMode.pnl
+    state: Excluded
+    !color: FwStateOKNotPhysics
+        action: Take(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+            move_to InLocal
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+            move_to Included
+        action: Manual	!visible: 0
+            move_to Manual
+        action: Ignore	!visible: 0
+            move_to Ignored
+    state: Included
+    !color: FwStateOKPhysics
+        action: Exclude(string OWNER = "")	!visible: 0
+            !do Exclude $ALL$FwChildMode
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: Manual(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Manual
+        action: Ignore(string OWNER = "")	!visible: 0
+            move_to Ignored
+        action: ExcludeAll(string OWNER = "")	!visible: 0
+            do ExcludeAll(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+            move_to Included
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Included
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+    state: InLocal
+    !color: FwStateOKNotPhysics
+        action: Release(string OWNER = "")	!visible: 1
+            !do Exclude $ALL$FwChildMode
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: ReleaseAll(string OWNER = "")	!visible: 1
+            do ExcludeAll(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+        action: Take(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+            move_to InLocal
+    state: Manual
+    !color: FwStateOKNotPhysics
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+            move_to Included
+        action: Take(string OWNER = "")	!visible: 1
+            do Include(OWNER=OWNER) $ALL$FwChildMode
+            move_to InManual
+        action: Exclude(string OWNER = "")	!visible: 0
+            do Exclude(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: Ignore	!visible: 0
+            move_to Ignored
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: ExcludeAll(string OWNER = "")	!visible: 0
+            do ExcludeAll(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+    state: InManual
+    !color: FwStateOKNotPhysics
+        action: Release(string OWNER = "")	!visible: 1
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Manual
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+        action: ReleaseAll(string OWNER = "")	!visible: 0
+            do ExcludeAll(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: SetInLocal	!visible: 0
+            move_to InLocal
+    state: Ignored
+    !color: FwStateOKNotPhysics
+        action: Include	!visible: 0
+            move_to Included
+        action: Exclude(string OWNER = "")	!visible: 0
+            do Exclude(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded
+        action: Manual	!visible: 0
+            move_to Manual
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ALL$FwChildMode
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ALL$FwChildMode
+            move_to Included
+        action: ExcludeAll(string OWNER = "")	!visible: 0
+            do ExcludeAll(OWNER=OWNER) $ALL$FwChildMode
+            move_to Excluded

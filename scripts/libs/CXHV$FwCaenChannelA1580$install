@@ -1,0 +1,369 @@
+#uses "FwCaenChannelA1580.ctl"
+CXHV_CAEN_cxcaen01_board08_channel000_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel000");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel000_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel000");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel000");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel001_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel001");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel001_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel001");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel001");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel002_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel002");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel002_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel002");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel002");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel003_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel003");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel003_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel003");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel003");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel004_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel004");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel004_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel004");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel004");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel005_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel005");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel005_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel005");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel005");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel006_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel006");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel006_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel006");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel006");
+}
+
+CXHV_CAEN_cxcaen01_board08_channel007_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel007");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board08_channel007_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board08/channel007");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board08/channel007");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel000_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel000");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel000_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel000");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel000");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel001_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel001");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel001_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel001");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel001");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel002_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel002");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel002_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel002");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel002");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel003_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel003");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel003_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel003");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel003");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel004_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel004");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel004_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel004");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel004");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel005_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel005");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel005_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel005");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel005");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel006_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel006");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel006_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel006");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel006");
+}
+
+CXHV_CAEN_cxcaen01_board09_channel007_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel007");
+   if(!globalExists("FwCaenChannelA1580_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelA1580_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelA1580",FwCaenChannelA1580_CurrDUActions);
+   }
+   FwCaenChannelA1580_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+}
+
+CXHV_CAEN_cxcaen01_board09_channel007_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01/board09/channel007");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board09/channel007");
+}
+

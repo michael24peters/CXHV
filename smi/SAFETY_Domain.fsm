@@ -1,0 +1,50 @@
+class: $FWPART_$TOP$SAFETY_Domain_CLASS
+!panel: SAFETY_Domain.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        when ( $ANY$FwCHILDREN in_state {ERROR, EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state READY )  move_to READY
+        action: Do_Emergency_OFF	!visible: 0
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            move_to NOT_READY
+    state: READY
+    !color: FwStateOKPhysics
+        when ( $ANY$FwCHILDREN in_state {ERROR, EMERGENCY_OFF} )  move_to ERROR
+        when ( $ANY$FwCHILDREN not_in_state READY )  move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 0
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            move_to NOT_READY
+    state: ERROR
+    !color: FwStateAttention3
+        when ( $ANY$FwCHILDREN in_state EMERGENCY_OFF )  move_to EMERGENCY_OFF
+        when ( $ALL$FwCHILDREN not_in_state {ERROR,EMERGENCY_OFF} )  move_to NOT_READY
+        action: Recover	!visible: 1
+            do Recover $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN in_state ERROR )  then
+                move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 0
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+    state: EMERGENCY_OFF
+    !color: FwStateAttention3
+        when ( $ALL$FwCHILDREN not_in_state EMERGENCY_OFF )  move_to ERROR
+        action: Clear_Emergency	!visible: 2
+            do Clear_Emergency $ALL$FwCHILDREN
+            move_to NOT_READY

@@ -1,0 +1,295 @@
+class: $FWPART_$ASS_FwChildMode_CLASS
+
+!panel: FwChildMode.pnl
+    state: Excluded
+    !color: FwStateOKNotPhysics
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            if ( $ASS$FwMode in_state Dead) then
+              move_to Manual
+            endif
+            if ( $ASS$FwMode not_in_state {Excluded, Manual} ) then
+            !    if ( $ASS$FwMode in_state Manual ) then
+            !        do Take(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            !    else
+                    move_to Excluded
+            !    endif
+            else
+                do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            endif
+            move_to Included
+        action: Manual	!visible: 0
+            do Manual $ASS$FwMode
+            move_to Manual
+        action: Ignore	!visible: 0
+            do Ignore $ASS$FwMode
+            move_to Ignored
+        action: LockOut	!visible: 1
+            move_to LockedOut
+        action: Exclude(string OWNER = "")	!visible: 1
+            do Exclude(OWNER=OWNER) $ASS$FwMode
+            move_to Excluded
+        action: ExcludePerm(string OWNER = "")	!visible: 0
+            move_to ExcludedPerm
+        action: Exclude&LockOut(string OWNER = "")	!visible: 0
+            move_to LockedOut
+    state: Included
+    !color: FwStateOKPhysics
+        !when (  $ASS$FwMode in_state Excluded )  move_to EXCLUDED
+        when ( $ASS$FwMode in_state Excluded )  do Exclude
+        when (  $ASS$FwMode in_state Ignored )  move_to IGNORED
+        when (  $ASS$FwMode in_state Manual )  move_to MANUAL
+        when ( $ASS$FwMode in_state Dead )  do Manual
+        action: Exclude(string OWNER = "")	!visible: 1
+            if ( $ASS$FwMode not_in_state Included ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do Release(OWNER=OWNER) $ASS$FwMode
+                else
+            !        if ( $ASS$FwMode in_state Dead ) then
+                        do Exclude(OWNER=OWNER) $ASS$FwMode
+            !       else
+            !            move_to Included
+            !        endif
+                endif
+            else
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to Excluded
+        action: Manual(string OWNER = "")	!visible: 1
+            do Manual(OWNER=OWNER) $ASS$FwMode
+            move_to Manual
+        action: Ignore(string OWNER = "")	!visible: 1
+            do Ignore(OWNER=OWNER) $ASS$FwMode
+            move_to Ignored
+        action: ExcludeAll(string OWNER = "")	!visible: 1
+            if ( $ASS$FwMode not_in_state {Included,Ignored,Manual} ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do ReleaseAll(OWNER=OWNER) $ASS$FwMode
+                else
+                    move_to Included
+                endif
+            else
+                do ExcludeAll(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to Excluded
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            move_to Included
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ASS$FwMode
+            move_to Included
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+        action: ExcludePerm(string OWNER = "")	!visible: 0
+            if ( $ASS$FwMode not_in_state Included ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do Release(OWNER=OWNER) $ASS$FwMode
+                else
+                    move_to Included
+                endif
+            else
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to ExcludedPerm
+        action: Exclude&LockOut(string OWNER = "")	!visible: 1
+            if ( $ASS$FwMode not_in_state Included ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do Release(OWNER=OWNER) $ASS$FwMode
+                else
+                    if ( $ASS$FwMode in_state Dead ) then
+                        do Exclude(OWNER=OWNER) $ASS$FwMode
+                   else
+                        move_to Included
+                    endif
+                endif
+            else
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to LockedOut
+    state: Manual
+    !color: FwStateOKNotPhysics
+        !when (  $ASS$FwMode in_state Included )  do Include
+        when (  $ASS$FwMode in_state Included )  move_to EXCLUDED
+        !when ( $ASS$FwMode in_state Excluded ) move_to EXCLUDED
+        !when ( $ASS$FwMode in_state Excluded ) do Manual
+        !when ( $ASS$FwMode in_state Excluded ) do Include
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            if ( $ASS$FwMode in_state Dead) then
+              move_to Manual
+            endif
+            if ( $ASS$FwMode not_in_state InManual ) then
+              do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            endif
+              if ( $ASS$FwMode in_state Included ) then
+                move_to Included
+              endif
+            move_to Manual
+        action: Exclude(string OWNER = "")	!visible: 1
+            !if ( $ASS$FwMode in_state {Manual, Included} ) then
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            !    move_to Excluded
+            !endif
+            !if ( $ASS$FwMode not_in_state Included ) then
+            !    if ( $ASS$FwMode in_state InManual ) then
+            !        do Release(OWNER=OWNER) $ASS$FwMode
+            !    else
+            !        do Exclude(OWNER=OWNER) $ASS$FwMode
+            !    endif
+            !else
+            !    do Exclude(OWNER=OWNER) $ASS$FwMode
+            !endif
+            !if ( $ASS$FwMode in_state Excluded ) then
+            !    move_to Excluded
+            !endif
+            !move_to Manual
+            if ( $ASS$FwMode in_state InManual ) then
+                 do SetInLocal $ASS$FwMode
+            endif
+            move_to Excluded
+        action: Ignore	!visible: 0
+            do Ignore $ASS$FwMode
+            move_to Ignored
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ASS$FwMode
+            !move_to Manual
+            if ( $ASS$FwMode in_state InManual ) then
+                 do SetInLocal $ASS$FwMode
+            endif
+            move_to Excluded
+        action: ExcludeAll(string OWNER = "")	!visible: 1
+            !if ( $ASS$FwMode not_in_state {Included,Ignored,Manual} ) then
+            !    if ( $ASS$FwMode in_state InManual ) then
+            !        do ReleaseAll(OWNER=OWNER) $ASS$FwMode
+            !    else
+            !        move_to Included
+            !    endif
+            !else
+            !    do ExcludeAll(OWNER=OWNER) $ASS$FwMode
+            !endif
+            !if ( $ASS$FwMode not_in_state InManual ) then
+              do ExcludeAll(OWNER=OWNER) $ASS$FwMode
+            !endif
+            !move_to Manual
+            if ( $ASS$FwMode in_state InManual ) then
+                 do SetInLocal $ASS$FwMode
+            endif
+            move_to Excluded
+        action: Manual	!visible: 0
+            do Manual $ASS$FwMode
+            move_to Manual
+        action: Exclude&LockOut(string OWNER = "")	!visible: 1
+            !if ( $ASS$FwMode in_state {Manual, Included} ) then
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            !    move_to Excluded
+            !endif
+            !if ( $ASS$FwMode not_in_state Included ) then
+            !    if ( $ASS$FwMode in_state InManual ) then
+            !        do Release(OWNER=OWNER) $ASS$FwMode
+            !    else
+            !        do Exclude(OWNER=OWNER) $ASS$FwMode
+            !    endif
+            !else
+            !    do Exclude(OWNER=OWNER) $ASS$FwMode
+            !endif
+            !if ( $ASS$FwMode in_state Excluded ) then
+            !    move_to Excluded
+            !endif
+            !move_to Manual
+            if ( $ASS$FwMode in_state InManual ) then
+                 do SetInLocal $ASS$FwMode
+            endif
+            move_to LockedOut
+    state: Ignored
+    !color: FwStateOKNotPhysics
+        when (  $ASS$FwMode in_state Included )  move_to INCLUDED
+        when ( $ASS$FwMode in_state Excluded ) move_to EXCLUDED
+        when ( $ASS$FwMode in_state Dead )  do Exclude
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            move_to Included
+        action: Exclude(string OWNER = "")	!visible: 1
+            if ( $ASS$FwMode not_in_state Included ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do Release(OWNER=OWNER) $ASS$FwMode
+                else
+                    do Exclude(OWNER=OWNER) $ASS$FwMode
+                endif
+            else
+                do Exclude(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to Excluded
+        action: Manual(string OWNER = "")	!visible: 0
+            do Manual(OWNER=OWNER) $ASS$FwMode
+            move_to Manual
+        action: SetMode(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 0
+            do SetMode(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+        action: Free(string OWNER = "")	!visible: 0
+            do Free(OWNER=OWNER) $ASS$FwMode
+            move_to Included
+        action: ExcludeAll(string OWNER = "")	!visible: 1
+            if ( $ASS$FwMode not_in_state {Included,Ignored,Manual} ) then
+                if ( $ASS$FwMode in_state InManual ) then
+                    do ReleaseAll(OWNER=OWNER) $ASS$FwMode
+                else
+                    move_to Included
+                endif
+            else
+                do ExcludeAll(OWNER=OWNER) $ASS$FwMode
+            endif
+            move_to Excluded
+    state: LockedOut
+    !color: FwStateOKNotPhysics
+        action: UnLockOut	!visible: 1
+            move_to Excluded
+        action: UnLockOut&Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            if ( $ASS$FwMode not_in_state Excluded ) then
+            !    if ( $ASS$FwMode in_state Manual ) then
+            !        do Take(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            !    else
+                    move_to LockedOut
+            !    endif
+            else
+                do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            endif
+            move_to Included
+        action: LockOutPerm	!visible: 0
+            move_to LockedOutPerm
+    state: ExcludedPerm
+    !color: FwStateOKNotPhysics
+        action: Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            !if ( $ASS$FwMode not_in_state Excluded ) then
+            !    if ( $ASS$FwMode in_state Manual ) then
+            !        do Take(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            !    else
+            !        move_to Excluded
+            !    endif
+            !else
+            !    do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            !endif
+            !move_to Included
+            if ( $ASS$FwMode not_in_state {Excluded, Manual} ) then
+                move_to ExcludedPerm
+            else
+                do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            endif
+            move_to Included
+        action: LockOut	!visible: 1
+            move_to LockedOut
+        action: Exclude(string OWNER = "")	!visible: 0
+            move_to Excluded
+    state: LockedOutPerm
+    !color: FwStateOKNotPhysics
+        action: UnLockOut	!visible: 1
+            move_to Excluded
+        action: UnLockOut&Include(string OWNER = "", string EXCLUSIVE = "YES")	!visible: 1
+            if ( $ASS$FwMode not_in_state Excluded ) then
+            !    if ( $ASS$FwMode in_state Manual ) then
+            !        do Take(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            !    else
+                    move_to LockedOutPerm
+            !    endif
+            else
+                do Include(OWNER=OWNER,EXCLUSIVE=EXCLUSIVE) $ASS$FwMode
+            endif
+            move_to Included
+        action: LockOut	!visible: 0
+            move_to LockedOut

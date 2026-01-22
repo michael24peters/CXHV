@@ -1,0 +1,31 @@
+class: $FWPART_$TOP$FwChildrenMode_CLASS
+!panel: FwChildrenMode.pnl
+    state: Complete
+    !color: _3DFace
+        !when ( $THIS$FwMode not_in_state {Included,InLocal} ) stay_in_state
+        when ( $ANY$FwChildrenMode in_state IncompleteDead ) move_to IncompleteDead
+        when ( ( $ANY$FwChildrenMode in_state DEAD ) and (  $ANY$FwChildMode in_state MANUAL ) ) move_to IncompleteDead
+        when ( $ANY$FwChildrenMode in_state Incomplete )  move_to Incomplete
+        when ( $ANY$FwChildMode not_in_state {Included,ExcludedPerm,LockedOutPerm} )  move_to Incomplete
+        when ( $ANY$FwChildrenMode in_state IncompleteDev )  move_to IncompleteDev
+        when ( $ANY$FwDevMode in_state DISABLED )  move_to IncompleteDev
+    state: Incomplete
+    !color: FwStateAttention2
+        !when ( $THIS$FwMode not_in_state {Included,InLocal} ) stay_in_state
+        when ( $ANY$FwChildrenMode in_state IncompleteDead ) move_to IncompleteDead
+        when ( ( $ANY$FwChildrenMode in_state DEAD ) and (  $ANY$FwChildMode in_state MANUAL ) ) move_to IncompleteDead
+        when ( ( $ALL$FwChildMode in_state {Included,ExcludedPerm,LockedOutPerm} ) and
+       ( $ALL$FwChildrenMode not_in_state Incomplete ) )  move_to Complete
+    state: IncompleteDev
+    !color: FwStateAttention1
+        !when ( $THIS$FwMode not_in_state {Included,InLocal} ) stay_in_state
+        when ( $ANY$FwChildrenMode in_state IncompleteDead ) move_to IncompleteDead
+        when ( ( $ANY$FwChildrenMode in_state DEAD ) and (  $ANY$FwChildMode in_state MANUAL ) ) move_to IncompleteDead
+        when ( ( $ANY$FwChildMode not_in_state {Included,ExcludedPerm,LockedOutPerm} ) or
+       ( $ANY$FwChildrenMode in_state Incomplete ) )  move_to Incomplete
+        when ( ( $ALL$FwDevMode not_in_state DISABLED ) and
+       ( $ALL$FwChildrenMode not_in_state IncompleteDev ) ) move_to Complete
+    state: IncompleteDead
+    !color: FwStateAttention3
+        when ( ( ( $ALL$FwChildrenMode not_in_state DEAD ) or (  $ALL$FwChildMode not_in_state MANUAL ) ) and ( $ALL$FwChildrenMode not_in_state IncompleteDead ) )  move_to Complete
+        !when ( $THIS$FwMode not_in_state {Included,InLocal} ) move_to Complete

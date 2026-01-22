@@ -1,0 +1,430 @@
+WCCILpmon    (1), 2026.01.21 12:40:38.151, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2026.01.21 12:40:38.273, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 12:40:38.364, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 12:40:38.483, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 12:40:38.784, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILproxy" -PROJ "CXHV" -pmonIndex 4 
+WCCILpmon    (1), 2026.01.21 12:40:38.986, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 12:40:39.187, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 12:40:39.389, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 12:40:39.590, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi
+WCCILpmon    (1), 2026.01.21 12:40:44.859, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 12:46:40.198, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.21 12:46:40.198, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:40.199, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:40.199, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:41.225, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:41.250, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:41.278, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:46:42.282, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.21 12:46:42.282, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.21 12:46:58.920, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.01.21 12:47:09.998, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.21 12:47:10.000, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 12:47:10.201, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 12:47:10.402, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 12:47:10.704, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILproxy" -PROJ "CXHV" -pmonIndex 4 
+WCCILpmon    (1), 2026.01.21 12:47:10.811, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 12:47:11.012, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 12:47:11.214, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 12:47:11.416, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi
+WCCILpmon    (1), 2026.01.21 12:47:17.157, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 12:48:07.022, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.21 12:48:07.022, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:07.022, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:07.023, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:08.045, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:08.069, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:08.081, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 12:48:09.084, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.21 12:48:15.764, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.21 12:48:15.764, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.21 12:48:15.764, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.21 13:12:28.241, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2026.01.21 13:12:28.365, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 13:12:28.457, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 13:12:28.575, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 13:12:29.077, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILproxy" -PROJ "CXHV" -pmonIndex 4 
+WCCILpmon    (1), 2026.01.21 13:12:29.279, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 13:12:29.481, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 13:12:29.683, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 13:12:29.885, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi
+WCCILpmon    (1), 2026.01.21 13:12:30.081, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 13:12:54.714, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.21 13:12:54.714, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:54.714, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:54.714, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:55.736, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:55.758, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:55.770, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:12:56.774, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.21 13:12:58.169, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.21 13:12:58.170, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.21 13:12:58.170, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.21 13:14:15.833, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2026.01.21 13:14:15.955, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 13:14:16.044, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 13:14:16.147, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 13:14:16.462, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILproxy" -PROJ "CXHV" -pmonIndex 4 
+WCCILpmon    (1), 2026.01.21 13:14:16.664, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 13:14:16.866, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 13:14:17.068, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 13:14:17.269, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi
+WCCILpmon    (1), 2026.01.21 13:14:22.225, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 13:14:37.930, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOActrl at index 9
+WCCILpmon    (1), 2026.01.21 13:14:37.957, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOActrl at index 10
+WCCILpmon    (1), 2026.01.21 13:14:37.957, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2026.01.21 13:14:37.959, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 13:22:53.866, SYS,  WARNING,    36/pmon, Blocking Manager WCCOAui(1) detected. No heartbeat since 30 seconds.
+WCCILpmon    (1), 2026.01.21 13:23:33.713, SYS,  WARNING,    39/pmon, Manager WCCOAui(1) is no longer blocking.
+WCCILpmon    (1), 2026.01.21 13:47:36.411, SYS,  INFO,       29/pmon, Got PROP_PUT command from ::1, changing manager WCCOAui(1) at index 8
+WCCILpmon    (1), 2026.01.21 13:47:56.488, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOAopcua at index 11
+WCCILpmon    (1), 2026.01.21 13:47:56.514, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCILsim at index 12
+WCCILpmon    (1), 2026.01.21 13:47:56.514, SYS,  INFO,       11/pmon, Detected stopped manager WCCILsim(6) - restarting it #1
+WCCILpmon    (1), 2026.01.21 13:47:56.516, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 12 -num 6
+WCCILpmon    (1), 2026.01.21 13:48:02.897, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:02.898, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:26.893, SYS,  INFO,       26/pmon, Got KILL command (SIGKILL) from ::1, stopping the manager WCCOAui(1) at index 8
+WCCILpmon    (1), 2026.01.21 13:48:26.894, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGKILL
+WCCILpmon    (1), 2026.01.21 13:48:26.915, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:27.063, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:27.300, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:28.307, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 13:48:28.408, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 13:48:28.556, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 13:48:29.131, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 13:48:29.733, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILproxy" -PROJ "CXHV" -pmonIndex 4 
+WCCILpmon    (1), 2026.01.21 13:48:29.935, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 13:48:30.137, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 13:48:30.338, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 13:48:30.471, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 13:48:30.779, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 13:48:30.946, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 13:48:31.096, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 12 -num 6
+WCCILpmon    (1), 2026.01.21 13:48:31.132, SYS,  INFO,       29/pmon, Got PROP_PUT command from ::1, changing manager WCCILproxy(1) at index 4
+WCCILpmon    (1), 2026.01.21 13:48:31.233, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 13:48:32.146, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from ::1, stopping the manager WCCILproxy(1) at index 4
+WCCILpmon    (1), 2026.01.21 13:48:32.146, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:48:33.202, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOActrl at index 13
+WCCILpmon    (1), 2026.01.21 13:48:33.203, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2026.01.21 13:48:33.204, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 13:48:33.689, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOActrl at index 14
+WCCILpmon    (1), 2026.01.21 13:48:33.689, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(1) - restarting it #1
+WCCILpmon    (1), 2026.01.21 13:48:33.691, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 13:48:33.718, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOAui at index 15
+WCCILpmon    (1), 2026.01.21 13:48:35.570, SYS,  INFO,       11/pmon, Detected stopped manager WCCOActrl(5) - restarting it #2
+WCCILpmon    (1), 2026.01.21 13:48:35.571, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 13:49:48.551, SYS,  INFO,       29/pmon, Got PROP_PUT command from ::1, changing manager WCCILsim(6) at index 12
+WCCILpmon    (1), 2026.01.21 13:49:53.219, SYS,  INFO,       29/pmon, Got PROP_PUT command from ::1, changing manager WCCOAopcua(6) at index 11
+WCCILpmon    (1), 2026.01.21 13:49:53.219, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAopcua(6) - restarting it #1
+WCCILpmon    (1), 2026.01.21 13:49:53.221, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 13:49:53.375, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAopcua(6) - restarting it #2
+WCCILpmon    (1), 2026.01.21 13:49:53.376, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 13:49:53.528, SYS,  INFO,       12/pmon, Manager WCCOAopcua(6) restarting too rapidly - giving up restarting
+WCCILpmon    (1), 2026.01.21 13:49:58.507, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from ::1, stopping the manager WCCILsim(6) at index 12
+WCCILpmon    (1), 2026.01.21 13:49:58.508, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 13:50:02.311, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAopcua(6) at index 11
+WCCILpmon    (1), 2026.01.21 13:50:02.313, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:17:33.651, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(5) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:33.652, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:34.699, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:37.771, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:17:37.937, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 14:17:37.942, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 14:17:38.144, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 14:17:38.747, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 14:17:39.549, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 14:17:39.751, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 14:17:39.953, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 14:17:40.158, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 14:17:43.978, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 14:17:44.190, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 14:17:44.270, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:17:44.495, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 14:17:44.696, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 14:17:44.897, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 14:18:23.451, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOAui at index 16
+WCCILpmon    (1), 2026.01.21 14:18:25.194, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 14:18:25.194, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(5) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:25.195, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:26.240, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:26.311, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:18:26.339, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 14:18:26.405, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 14:18:26.607, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 14:18:27.109, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 14:18:27.712, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 14:18:27.914, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 14:18:28.116, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 14:18:28.318, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 14:18:32.241, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 14:18:32.443, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 14:18:32.646, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:18:32.848, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 14:18:33.050, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 14:18:33.252, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 14:18:36.885, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 14:30:30.216, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:30.217, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:31.261, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:31.339, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:30:31.385, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 14:30:31.486, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 14:30:31.688, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 14:30:32.215, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 14:30:32.818, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 14:30:33.019, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 14:30:33.222, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 14:30:33.424, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 14:30:33.721, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 14:30:33.923, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 14:30:34.037, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:30:34.231, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 14:30:34.433, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 14:30:34.635, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 14:30:34.948, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 14:43:53.017, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.018, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.553, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.638, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:43:53.668, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.21 14:43:56.312, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.21 14:43:56.314, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 14:43:56.461, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 14:43:57.051, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 14:43:57.653, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 14:43:57.855, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 14:43:58.057, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 14:43:58.258, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 14:43:58.476, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 14:43:58.666, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 14:43:58.863, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:43:59.064, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 14:43:59.266, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 14:43:59.467, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 14:43:59.649, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 14:46:05.033, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(2) at index 16
+WCCILpmon    (1), 2026.01.21 14:46:05.036, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 14:46:15.775, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.21 14:46:15.775, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.775, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.776, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.776, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.776, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.776, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:15.776, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:16.812, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:16.933, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 14:46:16.956, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.21 14:46:19.461, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.21 14:46:19.461, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.21 14:46:19.462, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.21 14:47:19.944, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.01.21 14:47:23.215, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.21 14:47:23.217, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 14:47:23.419, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 14:47:24.008, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 14:47:24.638, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 14:47:24.840, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 14:47:25.042, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 14:47:25.244, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 14:47:29.071, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 14:47:29.272, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 14:47:29.442, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 14:47:29.643, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 14:47:29.719, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 14:47:29.920, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 14:47:33.925, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 15:09:54.849, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.850, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:54.851, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:55.870, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:55.934, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 15:09:55.963, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 15:09:56.044, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 15:09:56.246, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 15:09:56.748, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 15:09:57.350, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 15:09:57.552, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 15:09:57.753, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 15:09:57.955, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 15:10:01.564, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 15:10:01.766, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 15:10:01.968, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 15:10:02.200, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 15:10:02.402, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 15:10:02.604, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 15:10:07.021, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.21 15:22:48.407, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(2) at index 16
+WCCILpmon    (1), 2026.01.21 15:22:48.409, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 15:27:57.790, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 15
+WCCILpmon    (1), 2026.01.21 15:27:57.815, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 15 -p fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 15:28:39.328, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(3) at index 15
+WCCILpmon    (1), 2026.01.21 15:28:39.330, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 15 -p fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 15:46:37.064, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(1) at index 8
+WCCILpmon    (1), 2026.01.21 15:46:37.067, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       22/pmon, Got RESTART_ALL command from ::1, restarting the project
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(5) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.463, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.464, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.464, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.464, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:20.464, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:21.794, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:24.867, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.21 16:50:26.996, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.21 16:50:27.097, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.21 16:50:27.299, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.21 16:50:27.903, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.21 16:50:28.537, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.21 16:50:28.739, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.21 16:50:28.940, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.21 16:50:29.142, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.21 16:50:33.169, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.21 16:50:33.371, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.21 16:50:33.487, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.21 16:50:33.689, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.21 16:50:33.917, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.21 16:50:34.119, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.21 16:50:37.500, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.22 10:33:48.401, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOAui(2) at index 16
+WCCILpmon    (1), 2026.01.22 10:33:48.404, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.22 11:43:38.916, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:38.919, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:39.971, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:43.042, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:45.102, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.22 11:43:53.314, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.22 11:43:53.316, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.22 11:43:53.518, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.22 11:43:54.134, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.22 11:43:54.334, SYS,  SEVERE,     10/pmon, The central server manager WCCILevent(0) stopped! Restarting the project
+WCCILpmon    (1), 2026.01.22 11:43:54.435, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:56.851, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 11:43:56.870, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.22 11:43:56.972, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.22 11:43:57.173, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.22 11:43:57.743, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.22 11:43:58.345, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.22 11:43:58.547, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.22 11:43:58.749, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.22 11:43:58.950, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.22 11:43:59.153, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.22 11:43:59.355, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.22 11:43:59.555, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.22 11:43:59.747, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.22 11:43:59.948, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.22 11:44:00.150, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.22 11:44:00.334, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.835, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.836, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:10.836, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:11.389, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:14.463, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:16.526, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.22 15:19:16.526, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.22 15:19:21.068, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.01.22 15:19:23.007, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.22 15:19:23.008, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.22 15:19:23.209, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.22 15:19:23.801, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.22 15:19:23.914, SYS,  SEVERE,     10/pmon, The central server manager WCCILevent(0) stopped! Restarting the project
+WCCILpmon    (1), 2026.01.22 15:19:24.014, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:26.538, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 15:19:26.557, SYS,  INFO,       14/pmon, Completely stopped the project - restarting it
+WCCILpmon    (1), 2026.01.22 15:19:26.658, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.22 15:19:26.859, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.22 15:19:27.361, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.22 15:19:27.910, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.22 15:19:28.112, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.22 15:19:28.314, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.22 15:19:28.515, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.22 15:19:28.917, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.22 15:19:29.119, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.22 15:19:29.315, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.22 15:19:29.489, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.22 15:19:29.692, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.22 15:19:29.914, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.22 15:19:30.415, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.22 16:15:07.987, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCOAopcua(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.989, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.990, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:07.990, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:08.610, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:11.703, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.22 16:15:13.741, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.22 16:15:34.850, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.01.22 16:15:34.851, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.01.22 16:15:34.851, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.01.22 16:15:48.142, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.01.22 16:15:53.717, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.22 16:15:53.719, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXHV" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.22 16:15:53.921, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXHV" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.22 16:15:54.532, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXHV" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.22 16:15:55.255, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.22 16:15:55.457, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXHV" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.22 16:15:55.658, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXHV" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.22 16:15:55.860, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 8 -m gedi +config config.gedi
+WCCILpmon    (1), 2026.01.22 16:15:56.235, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.22 16:15:56.437, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.22 16:15:56.541, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAopcua" -PROJ "CXHV" -pmonIndex 11 -num 6
+WCCILpmon    (1), 2026.01.22 16:15:56.771, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 13 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.22 16:15:56.973, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXHV" -pmonIndex 14 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.22 16:15:57.174, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAui" -PROJ "CXHV" -pmonIndex 16 -p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar
+WCCILpmon    (1), 2026.01.22 16:15:57.575, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode

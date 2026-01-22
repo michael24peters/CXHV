@@ -1,0 +1,1568 @@
+V 14
+2
+LANG:10001 26 CAEN HV ConfDB Initializer
+LANG:1 26 CAEN HV ConfDB Initializer
+PANEL,-1 -1 788 568 N "_3DFace" 0
+"main()
+{
+	//CAEN
+	setValue ( \"i0\"    , \"text\" , \"10\"  );
+	setValue ( \"v0SB1\" , \"text\" , \"200\" );
+	setValue ( \"v0SB2\" , \"text\" , \"400\" );
+	setValue ( \"v0RDY\" , \"text\" , \"600\" );
+	setValue ( \"rD\"    , \"text\" , \"75\"  );
+	setValue ( \"rU\"    , \"text\" , \"75\"  );
+	setValue ( \"tT\"    , \"text\" , \"3\"   );
+	setValue ( \"vM\"    , \"text\" , \"600\" );
+
+	setValue (\"Texti0\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.i0\"));
+	setValue (\"TextrD\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.rDwn\"));
+	setValue (\"TextrU\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.rUp\"));
+	setValue (\"TexttT\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.tripTime\"));
+	setValue (\"TextSB1\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" STANDBY_1\");
+	setValue (\"TextSB2\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" STANDBY_2\");
+	setValue (\"TextRDY\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" READY\");
+	setValue (\"TextvM\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.vMaxSoftValue\"));
+	
+	setValue (\"i0\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.i0\"));
+	setValue (\"rD\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.rDwn\"));
+	setValue (\"rU\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.rUp\"));
+	setValue (\"tT\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.tripTime\"));
+	setValue (\"v0SB1\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" STANDBY_1\");
+	setValue (\"v0SB2\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" STANDBY_2\");
+	setValue (\"v0RDY\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.v0\") + \" READY\");
+	setValue (\"vM\", \"toolTipText\", getDpeName(typeDPCaen, \".settings.vMaxSoftValue\"));
+}" 0
+ E E E E 1 0 0 0  20 210
+""0  1
+E "#uses \"fwFSM/fwFsm.ctl\"
+
+/* PANEL VARIABLES ************************************************************************/
+const string typeDPCaen = \"FwCaenChannel\";
+
+const string typeFSMCaen = \"FwCaenChannelDefault\";
+
+
+/* Receives the data point type and the data point element and returns the dpe name ******/
+string getDpeName(string dptype, string dpe)
+{
+	dyn_string exceptionInfo;
+	dyn_string namelist;
+	dyn_string dpelist;
+	string definitionDp;
+	int index;
+
+	fwDevice_getDefinitionDp(makeDynString(\"\", dptype, \"\", \"\"), definitionDp, exceptionInfo);
+	if (dynlen(exceptionInfo)) return \"\";
+
+	dpGet(definitionDp + \".properties.names\", namelist, definitionDp + \".properties.dpes\", dpelist);
+
+	index = dynContains(dpelist, dpe);
+
+	if (index >0)
+		return namelist[index];
+	else
+		return \"\";
+}
+" 0
+ 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+1
+LANG:10001 6 Layer1
+2 7
+"Text1"
+""
+1 20 20 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 22 488 48
+0 2 0 "0s" 0 0 0 64 0 0  22 22 1
+2
+LANG:10001 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-19-*-100-100-*-*-iso8859-1|-19,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 18 CONFIGURE FSM TREE
+LANG:1 18 CONFIGURE FSM TREE
+30 0
+"Frame1"
+""
+1 20 210 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 60 490 210
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 6 Step 1
+LANG:1 6 Step 1
+2 9
+"Text2"
+""
+1 30 150 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 152 478 198
+0 2 0 "0s" 0 0 0 64 0 0  32 152 1
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 73 Allow to create the needed CONFIGURATORS for the tree bellow DOMAIN (CU).
+LANG:1 73 Allow to create the needed CONFIGURATORS for the tree bellow DOMAIN (CU).
+30 1
+"Frame2"
+""
+1 20 380 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 230 490 380
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 6 Step 2
+LANG:1 6 Step 2
+2 11
+"Text4"
+""
+1 30 320 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 322 478 368
+0 2 0 "0s" 0 0 0 64 0 0  32 322 1
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 76 Allow to create the needed standard RECIPES for the tree bellow DOMAIN (CU).
+LANG:1 76 Allow to create the needed standard RECIPES for the tree bellow DOMAIN (CU).
+30 2
+"Frame3"
+""
+1 20 550 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 400 490 550
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 6 Step 3
+LANG:1 6 Step 3
+2 12
+"Text5"
+""
+1 30 490 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 492 478 538
+0 2 0 "0s" 0 0 0 64 0 0  32 492 1
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 74 Allow to set the DU's VISIBLE / INVISIBLE for the tree bellow DOMAIN (CU).
+LANG:1 74 Allow to set the DU's VISIBLE / INVISIBLE for the tree bellow DOMAIN (CU).
+30 34
+"Frame6"
+""
+1 500 220 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 0.804020100502512 0 3.91959798994975 0 E 500 20 760 220
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 11 Definitions
+LANG:1 11 Definitions
+2 10
+"Text3"
+""
+1 510 50 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 0.95 0 12 0 E 512 42 568 58
+0 2 0 "0s" 0 0 0 64 0 0  512 42 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 7 DOMAIN:
+LANG:1 7 DOMAIN:
+2 14
+"Text7"
+""
+1 510 107 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 0.95 0 12 0 E 512 102 568 118
+0 2 0 "0s" 0 0 0 64 0 0  512 102 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 5 MODE:
+LANG:1 5 MODE:
+30 18
+"Frame5"
+""
+1 500 550 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 500 340 760 550
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 24 Recipe Values Definition
+LANG:1 24 Recipe Values Definition
+2 28
+"Text13"
+""
+1 630 480 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 632 482 648 498
+0 2 0 "0s" 0 0 0 64 0 0  632 482 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 2 v0
+LANG:1 2 v0
+2 31
+"TextSB1"
+""
+1 650 450 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 652 452 748 468
+0 2 0 "0s" 0 0 0 64 0 0  652 452 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 3 SB1
+LANG:1 3 SB1
+2 32
+"TextSB2"
+""
+1 650 480 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 652 482 748 498
+0 2 0 "0s" 0 0 0 64 0 0  652 482 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 3 SB2
+LANG:1 3 SB2
+2 33
+"TextRDY"
+""
+1 650 510 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 652 512 748 528
+0 2 0 "0s" 0 0 0 64 0 0  652 512 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 3 RDY
+LANG:1 3 RDY
+30 35
+"Frame4"
+""
+1 500 329 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+1
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.21212121212121 0 -78.7878787878788 0 E 500 230 760 330
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 0 
+LANG:1 0 
+2 36
+"Text6"
+""
+1 510 240 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 510 220 736 296
+0 2 0 "0s" 0 0 0 64 0 0  510 220 5
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 39 This panel allows to configure the FSM 
+LANG:1 39 This panel allows to configure the FSM 
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 38 tree to work porperly with the ConfDB 
+LANG:1 38 tree to work porperly with the ConfDB 
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 5 Tool.
+LANG:1 5 Tool.
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 36 The steps should be followed on the 
+LANG:1 36 The steps should be followed on the 
+2
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-12-*-100-100-*-*-iso8859-1|-12,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 13 proper order.
+LANG:1 13 proper order.
+2 39
+"Text8"
+""
+1 580 78.5 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 0.95 0 12 0 E 582 72 748 88
+0 2 0 "0s" 0 0 0 64 0 0  582 72 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 12 e.g. CU name
+LANG:1 12 e.g. CU name
+2 40
+"Text17"
+""
+1 580 130 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 582 142 748 158
+0 2 0 "0s" 0 0 0 64 0 0  582 142 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 24 e.g. PHYSICS, COSMICS...
+LANG:1 24 e.g. PHYSICS, COSMICS...
+2 41
+"Texti0"
+""
+1 510 370 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 512 372 608 388
+0 2 0 "0s" 0 0 0 64 0 0  512 372 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 2 i0
+LANG:1 2 i0
+2 42
+"TextrD"
+""
+1 510 400 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 512 402 608 418
+0 2 0 "0s" 0 0 0 64 0 0  512 402 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 4 rDwn
+LANG:1 4 rDwn
+2 43
+"TexttT"
+""
+1 630 370 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 632 372 748 388
+0 2 0 "0s" 0 0 0 64 0 0  632 372 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 8 tripTime
+LANG:1 8 tripTime
+2 44
+"TextrU"
+""
+1 630 400 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 632 402 748 418
+0 2 0 "0s" 0 0 0 64 0 0  632 402 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 3 rUp
+LANG:1 3 rUp
+2 45
+"TextvM"
+""
+1 510 480 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+3
+"layoutAlignment" "AlignCenter"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 512 482 628 498
+0 2 0 "0s" 0 0 0 64 0 0  512 482 1
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0 2
+LANG:10001 4 vMSV
+LANG:1 4 vMSV
+14 4
+"CUNAME"
+""
+1 580 50 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  578 48 742 73.84999999999999
+3 "0s" 0 0 0 0 0 -1  E E E
+14 15
+"MODE"
+""
+1 580 100 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  578 98 742 125
+3 "0s" 0 0 0 0 0 -1  E E E
+13 3
+"Button1"
+""
+1 30 90 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  28 88 222 142
+
+T 
+2
+LANG:10001 5 START
+LANG:1 5 START
+"/* **************************************************************************************
+
+Author: Bruno Belbute
+Date:   12.05.2006
+NOTE:   Create the CONFIGURATORS
+
+*************************************************************************************** */
+
+int level = 0; // indicate at which level the creation of configurators stopped
+int error = 0; // indicate if an error occured
+
+const string lb_csConfiguratorDUTypeH = \"FwFSMConfDBDUT\";  //FSM-ConfDB configurator DU type
+const string lb_csConfiguratorDUTypeL = \"FwFSMConfDBDUL\";  //FSM-ConfDB configurator DU type
+const string lb_csConfiguratorDUType_HV = \"FwFSMConfDB_HV\";  //FSM-ConfDB configurator DU type
+
+/* ************************************************************************************ */
+
+main()
+{
+	string node;
+	getValue (\"CUNAME\", \"text\", node);
+	error = 0;
+	level = 0;
+	CREATER (node);
+	if (error) return;
+	if (level > 0)
+	{
+//		fwFsmTree_generateFsmTypes();
+		fwFsmTree_generateTreeNode(node, 1);
+		fwFsmTree_refreshTree();
+	}
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 1 -> END\");
+}
+
+
+void CREATER (string node)
+{
+	string configurator;
+	dyn_string allChildren, exInfo;
+	dyn_int allChildrenTypes; //1 = CU, 2 = DU, 0 = Obj or LU
+	int CU, LU;
+
+	allChildren      = makeDynString ();
+	allChildrenTypes = makeDynInt    ();
+
+	allChildren = fwCU_getChildren (allChildrenTypes, node);
+
+	if (dynlen(allChildren) == 0)
+	{
+		DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 1 -> No CONFIGURATORS to be created!!\");
+		return;
+	}
+
+	//Set depth level
+	level++;
+
+	//Remove old Configurator if it exists
+	if (dpExists(node + \"_ConfDB\"))
+	{
+		if (fwFSMConfDB_removeConfigurator(node, node + \"_ConfDB\") == -1)
+		{
+			error = 1;
+			//DebugTN (\"ERROR : LVChannelConfDBInitializer -> Step 1 -> Error wile adding the configurator to domain \" + node + \"!!\");
+			return;
+		}
+	}
+
+	//Create Configurator for current node
+	if (lbFSMConfDB_addConfigurator(node) == -1)
+	{
+		error = 1;
+		//DebugTN (\"ERROR : LVChannelConfDBInitializer -> Step 1 -> Error wile adding the configurator to domain \" + node + \"!!\");
+		return;
+	}
+
+	//DebugTN (\"INFO : LVChannelConfDBInitializer -> Step 1 -> Configurator successfully added to node \" + node + \"!!\");
+
+	//For the CU
+	while ( (CU = dynContains (allChildrenTypes, 1)) > 0 )
+	{
+		allChildrenTypes[CU] = -1;
+		CREATER (allChildren[CU]);
+	}
+
+	//For the LU
+//	while ( (LU = dynContains (allChildrenTypes, 0)) > 0 )
+//	{
+//		allChildrenTypes[LU] = -1;
+//		CREATER (allChildren[LU]);
+//	}
+}
+
+/* ************************************************************************************ */
+
+/** This function is a replica fro th eone on the FSMConfDB library.
+		It was added to allow the configurators FwFSMConfDBUL to be automatically
+		added to the tree and should be erased as soon as it is not needed
+*/
+int lbFSMConfDB_addConfigurator(string sDomain)
+{
+  string dpName;
+  string du;
+  string lb_csConfiguratorDUType;
+  dyn_string exceptionInfo;
+
+	//check hierarchy
+	if (RadioButton1.number == \"0\")
+	{
+		fwFSMConfDB_setFwHierarchy(sDomain, fwDevice_HARDWARE);
+	}
+	else
+	if (RadioButton1.number == \"1\")
+	{
+		fwFSMConfDB_setFwHierarchy(sDomain, fwDevice_LOGICAL);
+	}
+
+	lb_csConfiguratorDUType = lb_csConfiguratorDUType_HV;
+
+  //check that we got a CU:
+  if(fwFsm_isCU(sDomain,sDomain)!= 1){
+    DebugN(\"ERROR: lbFSMConfDB_addConfigurator() -> The node: \" + sDomain + \" is not a control unit. Aborted.\");
+	return fwFSMConfDB_ERROR;
+  }
+
+  //1.-Create associated dp:
+  dpName = fwFSMConfDB_getConfiguratorName(sDomain);
+
+
+  if(fwTree_isNode(dpName, exceptionInfo)){
+    DebugN(\"ERROR: Configurator \" + dpName + \" already exists.\");
+    return fwFSMConfDB_ERROR;
+    }
+
+   dpCreate(dpName, g_csFSMConfDBDPT);
+
+  //2.-Create an alias for the configurator, used when working with logical hierarchy
+
+   dpSetAlias(dpName+\".\",dpName);
+
+  //3.-Add Du to the SMI++ domain
+
+   du = fwFsmTree_addNode(sDomain, dpName, lb_csConfiguratorDUType, 0);
+
+  DebugN(\"DU added: \" + dpName + \" ->>>> to domain: \" + sDomain);
+
+  return fwFSMConfDB_OK;
+}
+" 0
+ E E E
+13 8
+"Button4"
+""
+1 30 260 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  28 258 222 312
+
+T 
+2
+LANG:10001 5 START
+LANG:1 5 START
+"/* **************************************************************************************
+
+Author: Bruno Belbute
+Date:   12.05.2006
+NOTE:   Create standard RECIPES
+
+*************************************************************************************** */
+
+string node, mode;
+string hierarchyType;
+
+dyn_string SavePopertiesNames;
+dyn_string SavePopertiesValuesSB1;
+dyn_string SavePopertiesValuesSB2;
+dyn_string SavePopertiesValuesRDY;
+dyn_int    SavePopertiesTypes;
+
+dyn_string DataPointsDPNames;
+dyn_string DataPointsDPTypes;
+
+dyn_string RecipeValuesSB1;
+dyn_string RecipeValuesSB2;
+dyn_string RecipeValuesRDY;
+
+/* ************************************************************************************ */
+
+main()
+{
+	getValue (\"CUNAME\", \"text\", node);
+	getValue (\"MODE\"  , \"text\", mode);
+/*
+	if (RadioButton1.number == \"0\")
+	{
+		hierarchyType = fwDevice_HARDWARE;
+	}
+	else
+	if (RadioButton1.number == \"1\")
+	{
+		hierarchyType = fwDevice_LOGICAL;
+	}
+*/
+	GETSAVEPROPERTIES ();
+
+	GETDPS (node);
+
+	GETDPES ();
+
+	CREATERECIPECACHES ();
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END\");
+}
+
+/* ************************************************************************************ */
+
+void GETSAVEPROPERTIES ()
+{
+	string i0value, rDvalue, rUvalue, tTvalue, v0SB1value, v0SB2value, v0RDYvalue, vMvalue;
+
+	getValue ( \"i0\"    , \"text\" , i0value    );
+	getValue ( \"v0SB1\" , \"text\" , v0SB1value );
+	getValue ( \"v0SB2\" , \"text\" , v0SB2value );
+	getValue ( \"v0RDY\" , \"text\" , v0RDYvalue );
+	getValue ( \"rD\"    , \"text\" , rDvalue    );
+	getValue ( \"rU\"    , \"text\" , rUvalue    );
+	getValue ( \"tT\"    , \"text\" , tTvalue    );
+	getValue ( \"vM\"    , \"text\" , vMvalue    );
+
+	SavePopertiesNames = makeDynString (
+		\".settings.i0\"       ,
+		\".settings.i1\"       ,
+		\".settings.onOff\"    ,
+		\".settings.rDwn\"     ,
+		\".settings.rUp\"      ,
+		\".settings.tripTime\" ,
+		\".settings.v0\"       ,
+		\".settings.v1\"       ,
+		\".settings.vMaxSoftValue\" );
+
+	SavePopertiesValuesSB1 = makeDynString (
+		i0value    ,
+		\"0\"        ,
+		\"TRUE\"     ,
+		rDvalue    ,
+		rUvalue    ,
+		tTvalue    ,
+		v0SB1value ,
+		\"0\"        ,
+		vMvalue );
+
+	SavePopertiesValuesSB2 = makeDynString (
+		i0value    ,
+		\"0\"        ,
+		\"TRUE\"     ,
+		rDvalue    ,
+		rUvalue    ,
+		tTvalue    ,
+		v0SB2value ,
+		\"0\"        ,
+		vMvalue );
+
+	SavePopertiesValuesRDY = makeDynString (
+		i0value    ,
+		\"0\"        ,
+		\"TRUE\"     ,
+		rDvalue    ,
+		rUvalue    ,
+		tTvalue    ,
+		v0RDYvalue ,
+		\"0\"        ,
+		vMvalue );
+
+	SavePopertiesTypes = makeDynInt (
+		22 ,
+		22 ,
+		23 ,
+		22 ,
+		22 ,
+		22 ,
+		22 ,
+		22 ,
+		22 );
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!\");
+}
+
+/* ************************************************************************************ */
+
+void GETDPS (string node)
+{
+	dyn_string allFSMDevices;
+	dyn_string allChildren;
+	dyn_int allChildrenTypes; //1 = CU, 2 = DU, 0 = Obj or LU
+	string DUName;
+	string type;
+	int CU, LU;
+	int position;
+	dyn_string typeDeviceAll = makeDynString (typeFSMCaen, \"FwCaenChannelA1580Default\");
+
+	allChildren = fwCU_getChildren (allChildrenTypes, node);
+
+	if (dynlen(allChildren) == 0)
+	{
+		DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> No DU to include on the RecipeCache for node \" + node + \"!!\");
+		return;
+	}
+
+	//Add the current node children's
+	for (int i = 1; i <= dynlen(allChildren); i++)
+	{
+		fwCU_getType (allChildren[i], type);
+		position = dynContains (typeDeviceAll, type);
+		if (position > 0)
+		{
+/*
+			if (hierarchyType == fwDevice_HARDWARE)
+			{
+				DUName = getSystemName() + allChildren[i];
+			}
+			else
+			if (hierarchyType == fwDevice_LOGICAL)
+			{
+				DUName = allChildren[i];
+			}
+*/
+                        if(fwFsm_isLogicalDeviceName(allChildren[i]))
+				DUName = allChildren[i];
+                        else
+				DUName = getSystemName() + allChildren[i];
+			dynAppend (DataPointsDPNames, DUName);
+			dynAppend (DataPointsDPTypes, type);
+		}
+	}
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node \" + node + \" included!!\");
+
+	//For the CU
+	while ( (CU = dynContains (allChildrenTypes, 1)) > 0 )
+	{
+		allChildrenTypes[CU] = -1;
+		GETDPS (allChildren[CU]);
+	}
+
+	//For the LU
+	while ( (LU = dynContains (allChildrenTypes, 0)) > 0 )
+	{
+		allChildrenTypes[LU] = -1;
+		GETDPS (allChildren[LU]);
+	}
+DebugTN(__FUNCTION__, __LINE__, DataPointsDPNames, DataPointsDPTypes);
+}
+
+
+void GETDPES ()
+{
+	for (int i=1; i<=dynlen(DataPointsDPNames); i++)
+	{
+		for (int j=1; j<=dynlen(SavePopertiesNames); j++)
+		{
+			dynAppend (RecipeValuesSB1, SavePopertiesValuesSB1[j]);
+			dynAppend (RecipeValuesSB2, SavePopertiesValuesSB2[j]);
+			dynAppend (RecipeValuesRDY, SavePopertiesValuesRDY[j]);
+		}
+	}
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node \" + node + \" included!!\");
+}
+
+
+void CREATERECIPECACHES ()
+{
+	dyn_dyn_mixed recipeObject;
+	dyn_dyn_mixed oldObject;
+	dyn_dyn_mixed finalObject;
+	dyn_string deviceList;
+	dyn_string exInfo;
+
+	//Initialization
+	fwConfigurationDB_initialize (\"\", exInfo);
+
+	//Create Hierarchy
+	deviceList = DataPointsDPNames;
+
+	//Set the recipe type
+	fwConfigurationDB_setRecipeType (\"CaenHVChannelRecipeType\", exInfo);
+
+	//Get the recipe data
+	fwConfigurationDB_extractRecipe (deviceList, hierarchyType, recipeObject, exInfo);
+	//Command Go_STANDBY1
+	recipeObject[fwConfigurationDB_RO_VALUE] = RecipeValuesSB1;
+
+	fwConfigurationDB_loadRecipeFromCache(mode + \"/Go_STANDBY1\", makeDynString(), hierarchyType, oldObject, exInfo);
+        dynClear(exInfo);
+        if(dynlen(oldObject[fwConfigurationDB_RO_VALUE]))
+        {
+	  fwConfigurationDB_combineRecipes(finalObject, recipeObject, oldObject, exInfo);
+	  fwConfigurationDB_saveRecipeToCache(finalObject, hierarchyType, mode + \"/Go_STANDBY1\", exInfo);
+        }
+        else
+          fwConfigurationDB_saveRecipeToCache(recipeObject, hierarchyType, mode + \"/Go_STANDBY1\", exInfo);
+
+	//Command Go_STANDBY2
+	recipeObject[fwConfigurationDB_RO_VALUE] = RecipeValuesSB2;
+
+	fwConfigurationDB_loadRecipeFromCache(mode + \"/Go_STANDBY2\", makeDynString(), hierarchyType, oldObject, exInfo);
+        dynClear(exInfo);
+        if(dynlen(oldObject[fwConfigurationDB_RO_VALUE]))
+        {
+	  fwConfigurationDB_combineRecipes(finalObject, recipeObject, oldObject, exInfo);
+	  fwConfigurationDB_saveRecipeToCache(finalObject, hierarchyType, mode + \"/Go_STANDBY2\", exInfo);
+        }
+        else
+	  fwConfigurationDB_saveRecipeToCache(recipeObject, hierarchyType, mode + \"/Go_STANDBY2\", exInfo);
+
+	//Command Go_READY
+	recipeObject[fwConfigurationDB_RO_VALUE] = RecipeValuesRDY;
+
+	fwConfigurationDB_loadRecipeFromCache(mode + \"/Go_READY\", makeDynString(), hierarchyType, oldObject, exInfo);
+        dynClear(exInfo);
+        if(dynlen(oldObject[fwConfigurationDB_RO_VALUE]))
+        {
+	  fwConfigurationDB_combineRecipes(finalObject, recipeObject, oldObject, exInfo);
+	  fwConfigurationDB_saveRecipeToCache(finalObject, hierarchyType, mode + \"/Go_READY\", exInfo);
+        }
+        else
+    	  fwConfigurationDB_saveRecipeToCache(recipeObject, hierarchyType, mode + \"/Go_READY\", exInfo);
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!\");
+}
+" 0
+ E E E
+13 5
+"Button2"
+""
+1 30 430 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  28 428 222 482
+
+T 
+2
+LANG:10001 13 SET INVISIBLE
+LANG:1 13 SET INVISIBLE
+"
+/* ************************************************************************************** 
+
+Author: Bruno Belbute
+Date:   12.05.2006  
+NOTE:   Set the DU's INVISIBLE
+
+*************************************************************************************** */
+
+main()
+{
+	string node;
+	getValue (\"CUNAME\", \"text\", node);
+	VISIBILITY (node);
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> END\");
+}
+
+
+void VISIBILITY (string cu, string lu = \"\")
+{
+	dyn_string allFSMDevices;
+	dyn_string allChildren;
+	dyn_int allChildrenTypes; //1 = CU, 2 = DU, 0 = Obj or LU
+	int CU, LU;
+	string type, node;
+	int i, found = 0;
+
+	allFSMDevices    = makeDynString ();
+	allChildren      = makeDynString ();
+	allChildrenTypes = makeDynInt    ();
+
+	node = cu;
+	if(lu != \"\")
+		node = lu;
+	allChildren = fwCU_getChildren (allChildrenTypes, node);
+	
+	for(i = 1; i <= dynlen(allChildren); i++)
+	{
+		if(allChildrenTypes[i] == 2)
+		{
+			fwCU_getType(node+\"::\"+allChildren[i], type);
+			if(type == typeFSMCaen)
+			{
+				fwFsm_setObjectLabelPanel(cu, allChildren[i],\"\",\"\",0, -1);
+				found = 1;
+			}
+		}
+	}
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> All DU's of type \"+typeFSMCaen+\" for node \" + node + \" set to INVISIBLE!!\");
+
+	if(found)
+	{
+		if(lu == \"\")
+			lu = cu;
+		fwFsm_setObjectLabelPanel(cu, lu,\"\",\"lbCaenHV/lbCaenHV.pnl\", -1, -1);
+		DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> Panel for node \" + lu + \" set to lbCaenHV.pnl\");
+	}
+
+/*
+	if (dynlen(allChildren) == 0)
+	{
+		DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> No DU to set INVISIBLE!!\");
+		return;
+	}
+
+	//Set the current CU children's INVISIBLE
+	allFSMDevices = dpNames (node + \"|*\",\"_FwFsmDevice\");
+	
+	for (int i=1; i<=dynlen(allFSMDevices); i++)
+	{
+		if (dpSubStr(allFSMDevices[i], DPSUB_DP_EL) != (node + \"|\" + node + \"_FWDM\"))
+			dpSet (allFSMDevices[i] + \".ui.visible\", FALSE);
+	}
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> All DU's for node \" + node + \" set to INVISIBLE!!\");
+
+*/
+	//For the CU
+	while ( (CU = dynContains (allChildrenTypes, 1)) > 0 )
+	{
+		allChildrenTypes[CU] = -1;	
+		VISIBILITY (allChildren[CU]);	
+	}
+
+	//For the LU
+	while ( (LU = dynContains (allChildrenTypes, 0)) > 0 )
+	{
+		allChildrenTypes[LU] = -1;	
+		VISIBILITY (node, allChildren[LU]);	
+	}
+
+}" 0
+ E E E
+13 6
+"Button3"
+""
+1 250 430 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  248 428 442 482
+
+T 
+2
+LANG:10001 11 SET VISIBLE
+LANG:1 11 SET VISIBLE
+"
+/* ************************************************************************************** 
+
+Author: Bruno Belbute
+Date:   12.05.2006  
+NOTE:   Set the DU's VISIBLE
+
+*************************************************************************************** */
+
+main()
+{
+	string node;
+	getValue (\"CUNAME\", \"text\", node);
+	VISIBILITY (node);
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> END\");
+}
+
+
+void VISIBILITY (string cu, string lu = \"\")
+{
+	dyn_string allFSMDevices;
+	dyn_string allChildren;
+	dyn_int allChildrenTypes; //1 = CU, 2 = DU, 0 = Obj or LU
+	int i, CU, LU;
+	string type, node;
+
+	allChildren = fwCU_getChildren (allChildrenTypes, node);
+
+	for(i = 1; i <= dynlen(allChildren); i++)
+	{
+		if(allChildrenTypes[i] == 2)
+		{
+			fwCU_getType(node+\"::\"+allChildren[i], type);
+			if(type == typeFSMCaen)
+				fwFsm_setObjectLabelPanel(cu, allChildren[i],\"\",\"\",1, -1);
+		}
+	}
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> All DU's of type \"+typeFSMCaen+\" for node \" + node + \" set to VISIBLE!!\");
+/*
+	if (dynlen(allChildren) == 0)
+	{
+		DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> No DU to set VISIBLE!!\");
+		return;
+	}
+
+	//Set the current CU children's INVISIBLE
+	allFSMDevices = dpNames (node + \"|*\",\"_FwFsmDevice\");
+	
+	for (int i=1; i<=dynlen(allFSMDevices); i++)
+	{
+		if (dpSubStr(allFSMDevices[i], DPSUB_DP_EL) != (node + \"|\" + node + \"_FWDM\"))
+			dpSet (allFSMDevices[i] + \".ui.visible\", TRUE);
+	}
+
+	DebugTN (\"INFO : CAENHVChannelConfDBInitializer -> Step 3 -> All DU's for node \" + node + \" set to VISIBLE!!\");
+*/
+
+	//For the CU
+	while ( (CU = dynContains (allChildrenTypes, 1)) > 0 )
+	{
+		allChildrenTypes[CU] = -1;	
+		VISIBILITY (allChildren[CU]);	
+	}
+
+	//For the LU
+	while ( (LU = dynContains (allChildrenTypes, 0)) > 0 )
+	{
+		allChildrenTypes[LU] = -1;	
+		VISIBILITY (node, allChildren[LU]);	
+	}
+
+}" 0
+ E E E
+14 20
+"i0"
+""
+1 550 370 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  548 368 612 395
+3 "0s" 0 0 0 0 0 -1  E E E
+14 26
+"tT"
+""
+1 690 370 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  688 368 752 395
+3 "0s" 0 0 0 0 0 -1  E E E
+14 22
+"rD"
+""
+1 550 400 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  548 398 612 425
+3 "0s" 0 0 0 0 0 -1  E E E
+14 25
+"rU"
+""
+1 690 400 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  688 398 752 425
+3 "0s" 0 0 0 0 0 -1  E E E
+14 27
+"v0SB1"
+""
+1 690 450 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  688 448 752 475
+3 "0s" 0 0 0 0 0 -1  E E E
+14 29
+"v0SB2"
+""
+1 690 480 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  688 478 752 505
+3 "0s" 0 0 0 0 0 -1  E E E
+14 30
+"v0RDY"
+""
+1 690 510 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  688 508 752 535
+3 "0s" 0 0 0 0 0 -1  E E E
+14 46
+"vM"
+""
+1 550 480 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+2
+LANG:10001 0 
+LANG:1 0 
+
+1
+"layoutAlignment" "AlignCenter"
+2
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:1 84 -*-Arial-*-r-normal-*-13-*-100-100-*-*-iso8859-1|-13,0,0,0,404,0,0,0,0,0,0,0,0,Arial
+0  548 478 612 505
+3 "0s" 0 0 0 0 0 -1  E E E
+0
+LAYER, 1 
+1
+LANG:10001 6 Layer2
+0
+LAYER, 2 
+1
+LANG:10001 6 Layer3
+0
+LAYER, 3 
+1
+LANG:10001 6 Layer4
+0
+LAYER, 4 
+1
+LANG:10001 6 Layer5
+0
+LAYER, 5 
+1
+LANG:10001 6 Layer6
+0
+LAYER, 6 
+1
+LANG:10001 6 Layer7
+0
+LAYER, 7 
+1
+LANG:10001 6 Layer8
+0
+0

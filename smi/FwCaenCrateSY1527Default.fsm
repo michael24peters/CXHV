@@ -1,0 +1,10 @@
+class: $FWPART_$TOP$FwCaenCrateSY1527Default_CLASS/associated
+!panel: FwCaenCrateSY1527|FwCaenCrateSY1527Default.pnl
+    state: ERROR
+    !color: FwStateAttention3
+        action: RECOVER	!visible: 1
+    state: READY
+    !color: FwStateOKPhysics
+        action: Go_OFF	!visible: 1
+    state: OFF
+    !color: FwStateOKNotPhysics

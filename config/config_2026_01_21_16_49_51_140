@@ -1,0 +1,138 @@
+[general]
+pvss_path = "/opt/WinCC_OA/3.19"
+proj_path = "/group/cx/wincc319/fwComponents_CXHV"
+proj_path = "/group/online/ecs/PVSSShortcutProjects319/GlobalProject"
+proj_path = "/opt/winccoa_projects/CXHV"
+proj_version = "3.19"
+useNGA = 1
+useSQLite = 1
+langs = "en_US.utf8"
+distributed = 1
+userName = "root"
+password = ""
+mxProxy = "none"
+[ui]
+#--------- begin lbFsmDomains         - Do not edit it manually
+LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
+#----------- end lbFsmDomains         -------------------------
+#--------- begin fwAccessControl      - Do not edit it manually
+LoadCtrlLibs = "fwAccessControl/fwAccessControl.ctc"
+#----------- end fwAccessControl      -------------------------
+#--------- begin fwTrending3          - Do not edit it manually
+scriptEditorParseLibs = "classes/fwTrending/FwTrending_*.ctl"
+#----------- end fwTrending3          -------------------------
+#--------- begin fwConfigurationDB    - Do not edit it manually
+# To enforce synchronous (blocking) mode of CtrlRDBAccess operations
+# enable the fwConfigurationDB_ForceSynchronousMode = 1 in the [ui] or [ctrl]
+# block; [ui_X] and [ctrl_X] will also be checked:
+#fwConfigurationDB_ForceSynchronousMode = 1
+#----------- end fwConfigurationDB    -------------------------
+#--------- begin fwCore               - Do not edit it manually
+LoadCtrlLibs = "AAA_FwLibStartup_UI.ctl"
+#----------- end fwCore               -------------------------
+#--------- begin fwAlarmHandling      - Do not edit it manually
+aesShowDistDisconnections = 0
+#----------- end fwAlarmHandling      -------------------------
+#--------- begin fwTree               - Do not edit it manually
+scriptEditorParseLibs = "classes/fwTree/FwTree.ctl"
+scriptEditorParseLibs = "classes/fwTree/FwTree_Repository.ctl"
+scriptEditorParseLibs = "classes/fwTree/FwTreeNodeDelegate.ctl"
+#----------- end fwTree               -------------------------
+#--------- begin fwGeneral            - Do not edit it manually
+visionResizeMode = "Zoom"
+#----------- end fwGeneral            -------------------------
+#--------- begin fwStdUi              - Do not edit it manually
+scriptEditorParseLibs = "classes/fwStdUi/Fw*.ctl"
+scriptEditorParseLibs = "classes/fwStdUi/themes/Fw*.ctl"
+### uncomment the entry below to enable UI Themes support
+# fwStdUiThemesEnable = 1
+### set the default style (built-ins: "default","fwStdUi-Light","FwStdUi-Dark")
+### note that the styles must be enabled for it to be effective
+# fwStdUiStartupTheme = "default"
+### if you want to completely disable loading the css files on startup
+### (which happens even if fwStdUiThemesEnable is not set)
+### then uncomment this one:
+# fwStdUiDisableStylesheetsOnStartup = 1
+# this is auto-loaded to enforce CSS being applied on startup
+LoadCtrlLibs = "classes/fwStdUi/FwStdUiTheme.ctl"
+#----------- end fwStdUi              -------------------------
+#--------- begin fwStdLib             - Do not edit it manually
+scriptEditorParseLibs = "classes/fwStdLib/Fw*.ctl"
+scriptEditorParseLibs = "fwStdLib/fw*.ctl"
+#----------- end fwStdLib             -------------------------
+defaultFont = "Noto Sans"
+activeIconTheme = ""
+LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"
+defaultPanelFormat = "XML"
+[ctrl]
+#--------- begin lbFsmDomains         - Do not edit it manually
+LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
+#----------- end lbFsmDomains         -------------------------
+#--------- begin fwCore               - Do not edit it manually
+LoadCtrlLibs = "AAA_FwLibStartup.ctl"
+#----------- end fwCore               -------------------------
+LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"
+[valarch]
+#--------- begin fwGeneral            - Do not edit it manually
+deleteNotArchivedFileSets = 0
+#----------- end fwGeneral            -------------------------
+[data]
+#--------- begin fwGeneral            - Do not edit it manually
+#FWCORE-3242: archiving overrides smoothing on bit change
+smoothBit = "_active"
+smoothBit = "_exp_default"
+smoothBit = "_aut_default"
+smoothBit = "_out_prange"
+smoothBit = "_out_range"
+smoothBit = "_exp_inv"
+smoothBit = "_aut_inv"
+smoothBit = "_online_bad"
+### We should not take into account _online_bad : it is always set for DPEs that have no "default" config
+### which is the vast majority of our cases.
+#smoothBit = "_default_bad"
+### Note that we keep values queried through General Query or Single Query, as they were executed
+### usually after a restart of a driver, or due to some explicit debugging action
+smoothBit = "_from_GI"
+smoothBit = "_from_SI"
+### Simillarly for periphery-active, which means that interface driver is active
+smoothBit = "_per_active"
+### And for poll-on-use addresses (for drivers that support it), if not currently polled
+smoothBit = "_uncertain"
+smoothBit = "_stime_inv"
+smoothBit = "Userbit 1"
+smoothBit = "Userbit 2"
+smoothBit = "Userbit 3"
+smoothBit = "Userbit 4"
+smoothBit = "Userbit 5"
+smoothBit = "Userbit 6"
+smoothBit = "Userbit 7"
+smoothBit = "Userbit 8"
+smoothBit = "Userbit 9"
+smoothBit = "Userbit 10"
+smoothBit = "Userbit 11"
+smoothBit = "Userbit 12"
+smoothBit = "Userbit 13"
+smoothBit = "Userbit 14"
+smoothBit = "Userbit 15"
+smoothBit = "Userbit 16"
+smoothBit = "Userbit 17"
+smoothBit = "Userbit 18"
+smoothBit = "Userbit 19"
+smoothBit = "Userbit 20"
+smoothBit = "Userbit 21"
+smoothBit = "Userbit 22"
+smoothBit = "Userbit 23"
+smoothBit = "Userbit 24"
+smoothBit = "Userbit 25"
+smoothBit = "Userbit 26"
+smoothBit = "Userbit 27"
+smoothBit = "Userbit 28"
+smoothBit = "Userbit 29"
+smoothBit = "Userbit 30"
+smoothBit = "Userbit 31"
+smoothBit = "Userbit 32"
+#----------- end fwGeneral            -------------------------
+[event]
+#--------- begin fwFSM                - Do not edit it manually
+LoadCtrlLibs = "fwFSM/fwFsmEvent.ctl"
+#----------- end fwFSM                -------------------------

@@ -1,0 +1,13 @@
+WCCOAasciiSQLite(0), 2026.01.21 12:40:39.674, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 P015 platform Linux x86_64 linked at Nov  4 2024 20:27:39 (d529474b86f)
+WCCOAasciiSQLite(0), 2026.01.21 12:40:39.674, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ cxhv01:4897
+WCCOAasciiSQLite(0), 2026.01.21 12:40:39.675, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.679, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.679, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ cxhv01:4998
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.679, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.681, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.681, SYS,  INFO,      103, User names/passwords initialized
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.686, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.686, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.686, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.686, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCOAasciiSQLite(1), 2026.01.21 12:40:39.687, SYS,  INFO,        2, Manager Stop

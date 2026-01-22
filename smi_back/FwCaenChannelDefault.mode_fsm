@@ -1,0 +1,13 @@
+class: $FWPART_FwCaenChannelDefault_FwDevMode_CLASS
+    state: READY
+        action: Disable(Device)
+            remove &VAL_OF_Device from $FWPART_FWCAENCHANNELDEFAULT_FWSETSTATES
+            remove &VAL_OF_Device from $FWPART_FWCAENCHANNELDEFAULT_FWSETACTIONS
+            move_to READY
+        action: Enable(Device)
+            insert &VAL_OF_Device in $FWPART_FWCAENCHANNELDEFAULT_FWSETSTATES
+            insert &VAL_OF_Device in $FWPART_FWCAENCHANNELDEFAULT_FWSETACTIONS
+            move_to READY
+
+object: $FWPART_FwCaenChannelDefault_FWDM is_of_class $FWPART_FwCaenChannelDefault_FwDevMode_CLASS
+

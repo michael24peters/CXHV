@@ -1,0 +1,62 @@
+#uses "FwFSMConfDB_HV.ctl"
+TEST_TEST_ConfDB_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("TEST_ConfDB");
+   if(!globalExists("FwFSMConfDB_HV_CurrDUActions"))
+   {
+      addGlobal("FwFSMConfDB_HV_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwFSMConfDB_HV",FwFSMConfDB_HV_CurrDUActions);
+   }
+   FwFSMConfDB_HV_initialize("TEST", devdp);
+   fwDU_setDefaultParameters("TEST", devdp);
+   if(dpConnect("cbTEST_TEST_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbTEST_TEST_ConfDB_doCommand",false,
+     "TEST|TEST_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+TEST_TEST_ConfDB_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling TEST TEST_ConfDB");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("TEST_ConfDB");
+   if(dpDisconnect("cbTEST_TEST_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbTEST_TEST_ConfDB_doCommand",
+     "TEST|TEST_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbTEST_TEST_ConfDB_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("TEST_ConfDB");
+   fwDU_convertValue("TEST","TEST_ConfDB");
+   FwFSMConfDB_HV_valueChanged("TEST", devdp,
+      x1, state );
+   fwDU_setState("TEST", devdp, state);
+}
+
+cbTEST_TEST_ConfDB_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("TEST_ConfDB");
+   command = fwDU_convertCommand("TEST","TEST_ConfDB","FwFSMConfDB_HV", FwFSMConfDB_HV_CurrDUActions, command);
+   FwFSMConfDB_HV_doCommand("TEST", devdp, command);
+}
+

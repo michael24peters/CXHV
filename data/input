@@ -1,0 +1,8 @@
+backup
+/opt/winccoa_projects/CXHV/data/OnlineBackup/
+FILE
+0
+/opt/winccoa_projects/CXHV/
+db/backup*.txt
+db/wincc_oa/dbase.touch
+db/wincc_oa/sqlite/*.sqlite

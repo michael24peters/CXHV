@@ -1,0 +1,129 @@
+class: $FWPART_$TOP$DAQ_Domain_v1_CLASS
+!panel: DAQ_Domain_v1.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+        when ( $ANY$FwCHILDREN in_state UNKNOWN )  move_to UNKNOWN
+        when ( $ALL$FwCHILDREN in_state {CONFIGURING,READY,RUNNING} )  move_to CONFIGURING
+        action: Configure(int PART_ID = 0, string RUN_TYPE = "PHYSICS", int N_STEPS = 0, string RUN_INFO_DP = "")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_DAQ
+            if ( $ALL$FwFSMConfDB_DAQ not_in_state READY )  then
+              move_to ERROR
+            endif
+            !do APPLY_RECIPE $ALL$FwFSMConfDB_DAQ
+            do Configure(PART_ID=PART_ID, RUN_TYPE=RUN_TYPE, N_STEPS=N_STEPS, RUN_INFO_DP=RUN_INFO_DP) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state {CONFIGURING,READY, RUNNING} ) then
+                move_to NOT_READY
+            endif
+            move_to CONFIGURING
+        action: Load(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do Load(RUN_TYPE=RUN_TYPE, sMode=RUN_TYPE) $ALL$FwCHILDREN
+            !do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_DAQ
+            if ( $ALL$FwFSMConfDB_DAQ not_in_state READY )  then
+              move_to ERROR
+            endif
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY )  then
+              move_to NOT_READY
+            endif
+            move_to NOT_READY
+        action: Unload	!visible: 1
+            do Unload $ALL$FwCHILDREN
+            !do UNLOAD $ALL$FwFSMConfDB_DAQ
+            if ( $ALL$FwFSMConfDB_DAQ not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+        action: Stop	!visible: 0
+            do Stop $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to RUNNING
+            endif
+            move_to READY
+    state: UNKNOWN
+    !color: FwStateAttention2
+        when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+        when ( $ALL$FwCHILDREN not_in_state UNKNOWN )  move_to NOT_READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: CONFIGURING
+    !color: FwStateAttention1
+        when ( $ANY$FwCHILDREN in_state ERROR )  move_to ERROR
+        when ( $ANY$FwCHILDREN in_state UNKNOWN )  move_to UNKNOWN
+        when ( $ALL$FwCHILDREN in_state {READY,RUNNING} )  move_to READY
+        when ( $ANY$FwCHILDREN not_in_state {CONFIGURING,READY,RUNNING} )  move_to NOT_READY
+        action: FAKE_READY	!visible: 1
+            do FAKE_READY $ALL$FwCHILDREN
+            move_to READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: READY
+    !color: FwStateOKNotPhysics
+        when ( $ANY$FwCHILDREN in_state ERROR ) move_to ERROR
+        when ( $ANY$FwCHILDREN in_state UNKNOWN )  move_to UNKNOWN
+        when ( $ALL$FwCHILDREN in_state RUNNING )  move_to RUNNING
+        when ( $ANY$FwCHILDREN not_in_state {READY,RUNNING} ) move_to NOT_READY
+        action: Start(int RUN_NUMBER = 0)	!visible: 1
+            do Start $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state RUNNING ) then
+                move_to READY
+            endif
+            move_to RUNNING
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: RUNNING
+    !color: FwStateOKPhysics
+        when ( $ANY$FwCHILDREN in_state ERROR ) move_to ERROR
+        when ( $ANY$FwCHILDREN in_state UNKNOWN )  move_to UNKNOWN
+        when ( $ALL$FwCHILDREN in_state READY )  move_to READY
+        when ( $ANY$FwCHILDREN not_in_state RUNNING )  move_to NOT_READY
+        action: Stop	!visible: 1
+            do Stop $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to RUNNING
+            endif
+            move_to READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to RUNNING
+            endif
+            move_to NOT_READY
+        action: Step(int STEP_NR = 0, string RUN_TYPE = "")	!visible: 1
+            do Step(STEP_NR=STEP_NR, RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state RUNNING ) then
+                move_to NOT_READY
+            endif
+            move_to RUNNING
+    state: ERROR
+    !color: FwStateAttention3
+        when ( $ALL$FwCHILDREN not_in_state ERROR ) move_to NOT_READY
+        action: Recover	!visible: 1
+            do Recover $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to ERROR
+            endif
+            move_to NOT_READY

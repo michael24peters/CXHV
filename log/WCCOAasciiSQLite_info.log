@@ -1,0 +1,7 @@
+processing file /opt/WinCC_OA/3.19/dplist/update_007.dpl
+DpValue (4): Values for _SysMgm_DB.Items.ViewPermissionsOwn sent.
+DpValue (5): Values for _SysMgm_DB.Items.RunPermissionsOwn sent.
+DpValue (6): Values for _SysMgm_DB.Items.ActionScripts sent.
+Waiting for last response from eventmanager...
+Scanning of file /opt/WinCC_OA/3.19/dplist/update_007.dpl is finished (0)
+End of Program

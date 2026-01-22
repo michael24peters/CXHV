@@ -1,0 +1,62 @@
+#uses "FwFSMConfDB_HV.ctl"
+CXHV_CXHV_ConfDB_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CXHV_ConfDB");
+   if(!globalExists("FwFSMConfDB_HV_CurrDUActions"))
+   {
+      addGlobal("FwFSMConfDB_HV_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwFSMConfDB_HV",FwFSMConfDB_HV_CurrDUActions);
+   }
+   FwFSMConfDB_HV_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+   if(dpConnect("cbCXHV_CXHV_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCXHV_CXHV_ConfDB_doCommand",false,
+     "CXHV|CXHV_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CXHV_CXHV_ConfDB_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CXHV_ConfDB");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CXHV_ConfDB");
+   if(dpDisconnect("cbCXHV_CXHV_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCXHV_CXHV_ConfDB_doCommand",
+     "CXHV|CXHV_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCXHV_CXHV_ConfDB_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CXHV_ConfDB");
+   fwDU_convertValue("CXHV","CXHV_ConfDB");
+   FwFSMConfDB_HV_valueChanged("CXHV", devdp,
+      x1, state );
+   fwDU_setState("CXHV", devdp, state);
+}
+
+cbCXHV_CXHV_ConfDB_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CXHV_ConfDB");
+   command = fwDU_convertCommand("CXHV","CXHV_ConfDB","FwFSMConfDB_HV", FwFSMConfDB_HV_CurrDUActions, command);
+   FwFSMConfDB_HV_doCommand("CXHV", devdp, command);
+}
+

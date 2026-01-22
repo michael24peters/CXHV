@@ -1,0 +1,13 @@
+class: $FWPART_FwFSMConfDBDUT_FwDevMode_CLASS
+    state: READY
+        action: Disable(Device)
+            remove &VAL_OF_Device from $FWPART_FWFSMCONFDBDUT_FWSETSTATES
+            remove &VAL_OF_Device from $FWPART_FWFSMCONFDBDUT_FWSETACTIONS
+            move_to READY
+        action: Enable(Device)
+            insert &VAL_OF_Device in $FWPART_FWFSMCONFDBDUT_FWSETSTATES
+            insert &VAL_OF_Device in $FWPART_FWFSMCONFDBDUT_FWSETACTIONS
+            move_to READY
+
+object: $FWPART_FwFSMConfDBDUT_FWDM is_of_class $FWPART_FwFSMConfDBDUT_FwDevMode_CLASS
+

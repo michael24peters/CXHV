@@ -1,0 +1,16 @@
+[general]
+pvss_path = "/opt/WinCC_OA/3.19"
+proj_path = "/group/cx/wincc319/fwComponents_CXHV"
+proj_path = "/group/online/ecs/PVSSShortcutProjects319/GlobalProject"
+proj_path = "/opt/winccoa_projects/CXHV"
+proj_version = "3.19"
+useNGA = 1
+useSQLite = 1
+langs = "en_US.utf8"
+distributed = 1
+[ui]
+defaultFont = "Noto Sans"
+activeIconTheme = ""
+LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"
+[ctrl]
+LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"

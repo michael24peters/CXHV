@@ -1,0 +1,45 @@
+#uses "FwDevMode.ctl"
+CXHV01_CXHV01_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CXHV01_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("CXHV01", devdp);
+   fwDU_setDefaultParameters("CXHV01", devdp);
+   if(dpConnect("cbCXHV01_CXHV01_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+CXHV01_CXHV01_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV01 CXHV01_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CXHV01_FWDM");
+   if(dpDisconnect("cbCXHV01_CXHV01_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbCXHV01_CXHV01_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CXHV01_FWDM");
+   fwDU_convertValue("CXHV01","CXHV01_FWDM");
+   FwDevMode_valueChanged("CXHV01", devdp,
+      x1, state );
+   fwDU_setState("CXHV01", devdp, state);
+}
+

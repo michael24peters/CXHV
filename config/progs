@@ -1,0 +1,21 @@
+version 1
+
+auth "" ""
+#Manager         | Start  | SecKill | Restart# | ResetMin | Options
+WCCILpmon        | manual |      30 |        3 |        1 |
+WCCILdataSQLite  | always |      30 |        3 |        1 |
+WCCOAnextgenarch | always |      30 |        2 |        2 |
+WCCILevent       | always |      30 |        3 |        1 |
+WCCILproxy       | manual |      30 |        2 |        2 |
+WCCOActrl        | always |      30 |        3 |        1 |-f pvss_scripts.lst
+WCCILsim         | always |      30 |        3 |        1 |
+WCCILdist        | always |      30 |        3 |        1 |
+WCCOAui          |   once |      30 |        3 |        1 |-m gedi +config config.gedi
+WCCOActrl        |   once |      30 |        1 |        1 |-f fwScripts.lst
+WCCOActrl        | always |      30 |        3 |        3 |-f fwInstallationAgent.lst
+WCCOAopcua       | always |      30 |        2 |        2 |-num 6
+WCCILsim         | manual |      30 |        2 |        2 |-num 6
+WCCOActrl        | always |      30 |        3 |        2 |unDistributedControl.ctl
+WCCOActrl        | always |      30 |        3 |        5 |fwFSM/fwFsmSrvr.ctl
+WCCOAui          | manual |       5 |        3 |        5 |-p fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl -iconBar -menuBar
+WCCOAui          |   once |      30 |        2 |        2 |-p lbCaenHV/lbCaenHV_ConfDBInitializer.pnl -iconBar -menuBar

@@ -1,0 +1,503 @@
+class: $FWPART_$TOP$HV_Domain_v1_CLASS
+!panel: HV_Domain_v1.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        when ( $ANY$FwCHILDREN in_state {ERROR,EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY1,STANDBY1} )  move_to RAMPING_STANDBY1
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY2,STANDBY2} )  move_to RAMPING_STANDBY2
+        when ( $ALL$FwCHILDREN in_state {RAMPING_READY,READY} )  move_to RAMPING_READY
+        when ( $ALL$FwCHILDREN in_state {RAMPING_OFF,OFF} )  move_to RAMPING_OFF
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Load(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            do LOAD(RUN_TYPE=RUN_TYPE,sMode=RUN_TYPE) $ALL$FwCHILDREN
+            !do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+                move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+    state: OFF
+    !color: FwStateOKNotPhysics
+        when ( $ANY$FwCHILDREN in_state {ERROR,EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY1,STANDBY1} )  move_to RAMPING_STANDBY1
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY2,STANDBY2} )  move_to RAMPING_STANDBY2
+        when ( $ALL$FwCHILDREN in_state {RAMPING_READY,READY} )  move_to RAMPING_READY
+        when ( $ANY$FwCHILDREN not_in_state OFF )  move_to NOT_READY
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+    state: RAMPING_STANDBY1
+    !color: FwStateAttention2
+        when ( $ALL$FwCHILDREN in_state STANDBY1 )  move_to STANDBY1
+        when ( $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1,STANDBY1} )  move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+    state: STANDBY1
+    !color: FwStateOKNotPhysics
+        when ( $ANY$FwCHILDREN in_state {ERROR,EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {RAMPING_OFF,OFF} )  move_to RAMPING_OFF
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY2,STANDBY2} )  move_to RAMPING_STANDBY2
+        when ( $ALL$FwCHILDREN in_state {RAMPING_READY,READY} )  move_to RAMPING_READY
+        when ( $ANY$FwCHILDREN not_in_state STANDBY1 )  move_to NOT_READY
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+    state: RAMPING_STANDBY2
+    !color: FwStateAttention2
+        when ( $ALL$FwCHILDREN in_state STANDBY2 )  move_to STANDBY2
+        when ( $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2,STANDBY2} )  move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+    state: STANDBY2
+    !color: FwStateOKNotPhysics
+        when ( $ANY$FwCHILDREN in_state {ERROR,EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY1,STANDBY1} )  move_to RAMPING_STANDBY1
+        when ( $ALL$FwCHILDREN in_state {RAMPING_READY,READY} )  move_to RAMPING_READY
+        when ( $ALL$FwCHILDREN in_state {RAMPING_OFF,OFF} )  move_to RAMPING_OFF
+        when ( $ANY$FwCHILDREN not_in_state STANDBY2 )  move_to NOT_READY
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+    state: RAMPING_READY
+    !color: FwStateAttention2
+        when ( $ALL$FwCHILDREN in_state READY )  move_to READY
+        when ( $ANY$FwCHILDREN not_in_state {RAMPING_READY,READY} )  move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: FAKE_READY	!visible: 1
+            do FAKE_READY $ALL$FwCHILDREN
+            move_to READY
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+    state: READY
+    !color: FwStateOKPhysics
+        when ( $ANY$FwCHILDREN in_state {ERROR,EMERGENCY_OFF} )  move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY1,STANDBY1} )  move_to RAMPING_STANDBY1
+        when ( $ALL$FwCHILDREN in_state {RAMPING_STANDBY2,STANDBY2} )  move_to RAMPING_STANDBY2
+        when ( $ALL$FwCHILDREN in_state {RAMPING_OFF,OFF} )  move_to RAMPING_OFF
+        when ( $ANY$FwCHILDREN not_in_state READY )  move_to NOT_READY
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Reset	!visible: 1
+            do Reset $ALL$FwCHILDREN
+            do UNLOAD $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state NOT_READY )  then
+              move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Step(int STEP_NR = 0, string RUN_TYPE = "")	!visible: 1
+            do Step(STEP_NR=STEP_NR, RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to NOT_READY
+            endif
+            move_to READY
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+    state: RAMPING_OFF
+    !color: FwStateAttention2
+        when ( $ALL$FwCHILDREN in_state OFF )  move_to OFF
+        when ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF,OFF} )  move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+        action: Go_OFF	!visible: 1
+            do Go_OFF $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN not_in_state {RAMPING_OFF, OFF} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_OFF
+        action: Go_STANDBY1(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY1(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY1, STANDBY1} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY1
+        action: Go_STANDBY2(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_STANDBY2(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_STANDBY2, STANDBY2} ) then
+                move_to NOT_READY
+            endif
+            move_to RAMPING_STANDBY2
+        action: Go_READY(string RUN_TYPE = "PHYSICS")	!visible: 1
+            do LOAD(sMode=RUN_TYPE) $ALL$FwFSMConfDB_HV
+            if (  $ANY$FwFSMConfDB_HV not_in_state READY )  then
+              move_to ERROR
+            endif
+            do Go_READY(RUN_TYPE=RUN_TYPE) $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state {RAMPING_READY, READY} )  then
+                    move_to NOT_READY
+            endif
+            move_to RAMPING_READY
+    state: ERROR
+    !color: FwStateAttention3
+        when ( $ALL$FwCHILDREN in_state EMERGENCY_OFF )  move_to EMERGENCY_OFF
+        when ( $ALL$FwCHILDREN not_in_state {ERROR,EMERGENCY_OFF} )  move_to NOT_READY
+        action: RECOVER	!visible: 1
+            do RECOVER $ALL$FwCHILDREN
+            if ( $ANY$FwCHILDREN in_state ERROR ) then
+                move_to ERROR
+            endif
+            move_to NOT_READY
+        action: Do_Emergency_OFF	!visible: 1
+            do Do_Emergency_OFF $ALL$FwCHILDREN
+            if (  $ANY$FwCHILDREN not_in_state EMERGENCY_OFF )  then
+              move_to ERROR
+            endif
+            move_to EMERGENCY_OFF
+    state: EMERGENCY_OFF
+    !color: FwStateAttention3
+        when ( $ALL$FwCHILDREN not_in_state EMERGENCY_OFF )  move_to NOT_READY
+        action: Clear_Emergency	!visible: 1
+            do Clear_Emergency $ALL$FwCHILDREN
+            move_to NOT_READY

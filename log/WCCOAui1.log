@@ -1,0 +1,565 @@
+2026.01.21 13:48:59.056["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 14:17:46.347["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 14:18:34.350["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 14:36:56.691["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 14:47:31.310["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 15:10:04.839["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.21 15:46:41.782["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.enableCircuit to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.enableCircuit. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.i0 to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.i1 to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.rUp to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.tripInt to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.tripInt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.tripExt to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.tripExt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.v0 to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.v0. Value = 20"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.v1 to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel003.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board08/channel003.readBackSettings.vMaxSoftValue. Value = 0"]
+2026.01.21 16:20:29.504["fwFsmTree_generateAll: Generating Device Types..."]
+2026.01.21 16:20:31.880["fwFsmTree_generateAll: Generating Object Types..."]
+2026.01.21 16:20:33.923["fwFsmTree_generateAll: Generating Tree Nodes..."]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.enableCircuit to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.enableCircuit. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.i0 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.i1 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.rUp to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripInt to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripInt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripExt to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripExt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.v0 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.v0. Value = 20"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.v1 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.vMaxSoftValue. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.vMaxSoftValue. Value = 6000"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.vMaxSoftValue. Value = 6000"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel001.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel001.readBackSettings.vMaxSoftValue. Value = 6000"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel002.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel002.readBackSettings.vMaxSoftValue. Value = 6000"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.rDwn. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.rUp. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel005.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel005.readBackSettings.vMaxSoftValue. Value = 6000"]
+2026.01.21 16:49:56.694["fwCaen.preInit script: running script"]
+2026.01.21 16:49:56.695["fwCaen.preinit script: script finished"]
+2026.01.21 16:50:35.635["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+["exec"]["/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/fwFSM/xwindiff"]["/opt/winccoa_projects/CXHV/smi/FwCaenChannelA1580.fsm"]["/opt/winccoa_projects/CXHV/smi/FwCaenChannelDefault.fsm"]
+Error: one of /opt/winccoa_projects/CXHV/smi/FwCaenChannelA1580.fsm, /opt/winccoa_projects/CXHV/smi/FwCaenChannelDefault.fsm is neither file nor directory
+2026.01.21 16:53:28.627["+++++++++++++ Opening Panel CXHV::CXHV"]
+2026.01.21 16:53:44.710["+++++++++++++ Opening Panel CXHV::CXHV"]
+2026.01.21 16:53:48.014["******* Closing "]["CXHV"][0]
+2026.01.21 16:53:51.902["+++++++++++++ Opening Panel CXHV::CAEN/cxcaen01/board08/channel001"]
+2026.01.21 16:53:58.600["+++++++++++++ Opening Panel CXHV::CXHV"]
+2026.01.21 16:54:19.073["+++++++++++++ Opening Panel CXHV::CXHV"]
+["Reporting 21-Jan-2026 16:54:25 - Restarting FSM Tree CXHV on System: CXHV"]
+["Reporting 21-Jan-2026 16:55:41 - Restarting FSM Tree CXHV on System: CXHV"]
+["Reporting 21-Jan-2026 16:55:55 - Opening Device Editor Navigator on System: CXHV: (host: CXHV01)"]
+["/opt/WinCC_OA/3.19/bin/WCCOAui -proj CXHV -event CXHV01:4779 -data CXHV01:4778 -p fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl -menuBar -iconBar&"]
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+No matching fbConfigs or visuals found
+2026.01.21 16:57:56.748["******* Closing "]["CXHV"][0]
+2026.01.21 16:58:56.120["+++++++++++++ Opening Panel CXHV::CAEN/cxcaen01/board08/channel000"]
+2026.01.21 16:59:28.237["******* Closing "]["CAEN/cxcaen01/board08/channel000"][0]
+2026.01.22 08:33:03.284["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.i1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rDwn. Value = 30"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.rUp to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.rUp. Value = 30"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.tripTime. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v0 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.v1 to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board01/channel000.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board01/channel000.readBackSettings.vMaxSoftValue. Value = 6000"]
+2026.01.22 09:23:06.550["+++++++++++++ Opening Panel CXHV::CXHV"]
+2026.01.22 09:23:26.736["******* Closing "]["CXHV"][0]
+2026.01.22 09:23:29.424["+++++++++++++ Opening Panel CXHV01::CAEN/cxcaen01/board01/channel000"]
+2026.01.22 10:34:34.273["********************** Expanding Tree/Does not exist CXHV01"]
+2026.01.22 10:34:34.276["********************** Expanding Tree/Does not exist CXHV01"]
+2026.01.22 11:44:33.398["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.22 11:45:35.147["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:45:35.185["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:45:35.186["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:45:36.478["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:45:36.478["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:49:03.934["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:49:03.973["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:49:03.973["GETDPS"][188][dyn_string 16 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 16 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+]
+2026.01.22 11:49:03.974["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:49:05.124["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:49:05.124["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:50:22.875["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:50:22.916["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:50:22.916["GETDPS"][188][dyn_string 0 items
+][dyn_string 0 items
+]
+2026.01.22 11:50:22.916["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:50:22.929["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:50:22.929["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:51:04.315["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:51:04.355["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:51:04.355["GETDPS"][188][dyn_string 16 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 16 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+]
+2026.01.22 11:51:04.356["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:51:05.488["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:51:05.488["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:55:19.462["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:55:19.503["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:55:19.503["GETDPS"][188][dyn_string 32 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+    17: "CXHV:CAEN/cxcaen01/board08/channel000"
+    18: "CXHV:CAEN/cxcaen01/board08/channel001"
+    19: "CXHV:CAEN/cxcaen01/board08/channel002"
+    20: "CXHV:CAEN/cxcaen01/board08/channel003"
+    21: "CXHV:CAEN/cxcaen01/board08/channel004"
+    22: "CXHV:CAEN/cxcaen01/board08/channel005"
+    23: "CXHV:CAEN/cxcaen01/board08/channel006"
+    24: "CXHV:CAEN/cxcaen01/board08/channel007"
+    25: "CXHV:CAEN/cxcaen01/board09/channel000"
+    26: "CXHV:CAEN/cxcaen01/board09/channel001"
+    27: "CXHV:CAEN/cxcaen01/board09/channel002"
+    28: "CXHV:CAEN/cxcaen01/board09/channel003"
+    29: "CXHV:CAEN/cxcaen01/board09/channel004"
+    30: "CXHV:CAEN/cxcaen01/board09/channel005"
+    31: "CXHV:CAEN/cxcaen01/board09/channel006"
+    32: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 32 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+    17: "FwCaenChannelA1580Default"
+    18: "FwCaenChannelA1580Default"
+    19: "FwCaenChannelA1580Default"
+    20: "FwCaenChannelA1580Default"
+    21: "FwCaenChannelA1580Default"
+    22: "FwCaenChannelA1580Default"
+    23: "FwCaenChannelA1580Default"
+    24: "FwCaenChannelA1580Default"
+    25: "FwCaenChannelA1580Default"
+    26: "FwCaenChannelA1580Default"
+    27: "FwCaenChannelA1580Default"
+    28: "FwCaenChannelA1580Default"
+    29: "FwCaenChannelA1580Default"
+    30: "FwCaenChannelA1580Default"
+    31: "FwCaenChannelA1580Default"
+    32: "FwCaenChannelA1580Default"
+]
+2026.01.22 11:55:19.504["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:55:19.576["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:55:19.577["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:56:13.537["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 11:56:13.579["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 11:56:13.580["GETDPS"][188][dyn_string 48 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+    17: "CXHV:CAEN/cxcaen01/board08/channel000"
+    18: "CXHV:CAEN/cxcaen01/board08/channel001"
+    19: "CXHV:CAEN/cxcaen01/board08/channel002"
+    20: "CXHV:CAEN/cxcaen01/board08/channel003"
+    21: "CXHV:CAEN/cxcaen01/board08/channel004"
+    22: "CXHV:CAEN/cxcaen01/board08/channel005"
+    23: "CXHV:CAEN/cxcaen01/board08/channel006"
+    24: "CXHV:CAEN/cxcaen01/board08/channel007"
+    25: "CXHV:CAEN/cxcaen01/board09/channel000"
+    26: "CXHV:CAEN/cxcaen01/board09/channel001"
+    27: "CXHV:CAEN/cxcaen01/board09/channel002"
+    28: "CXHV:CAEN/cxcaen01/board09/channel003"
+    29: "CXHV:CAEN/cxcaen01/board09/channel004"
+    30: "CXHV:CAEN/cxcaen01/board09/channel005"
+    31: "CXHV:CAEN/cxcaen01/board09/channel006"
+    32: "CXHV:CAEN/cxcaen01/board09/channel007"
+    33: "CXHV:CAEN/cxcaen01/board08/channel000"
+    34: "CXHV:CAEN/cxcaen01/board08/channel001"
+    35: "CXHV:CAEN/cxcaen01/board08/channel002"
+    36: "CXHV:CAEN/cxcaen01/board08/channel003"
+    37: "CXHV:CAEN/cxcaen01/board08/channel004"
+    38: "CXHV:CAEN/cxcaen01/board08/channel005"
+    39: "CXHV:CAEN/cxcaen01/board08/channel006"
+    40: "CXHV:CAEN/cxcaen01/board08/channel007"
+    41: "CXHV:CAEN/cxcaen01/board09/channel000"
+    42: "CXHV:CAEN/cxcaen01/board09/channel001"
+    43: "CXHV:CAEN/cxcaen01/board09/channel002"
+    44: "CXHV:CAEN/cxcaen01/board09/channel003"
+    45: "CXHV:CAEN/cxcaen01/board09/channel004"
+    46: "CXHV:CAEN/cxcaen01/board09/channel005"
+    47: "CXHV:CAEN/cxcaen01/board09/channel006"
+    48: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 48 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+    17: "FwCaenChannelA1580Default"
+    18: "FwCaenChannelA1580Default"
+    19: "FwCaenChannelA1580Default"
+    20: "FwCaenChannelA1580Default"
+    21: "FwCaenChannelA1580Default"
+    22: "FwCaenChannelA1580Default"
+    23: "FwCaenChannelA1580Default"
+    24: "FwCaenChannelA1580Default"
+    25: "FwCaenChannelA1580Default"
+    26: "FwCaenChannelA1580Default"
+    27: "FwCaenChannelA1580Default"
+    28: "FwCaenChannelA1580Default"
+    29: "FwCaenChannelA1580Default"
+    30: "FwCaenChannelA1580Default"
+    31: "FwCaenChannelA1580Default"
+    32: "FwCaenChannelA1580Default"
+    33: "FwCaenChannelA1580Default"
+    34: "FwCaenChannelA1580Default"
+    35: "FwCaenChannelA1580Default"
+    36: "FwCaenChannelA1580Default"
+    37: "FwCaenChannelA1580Default"
+    38: "FwCaenChannelA1580Default"
+    39: "FwCaenChannelA1580Default"
+    40: "FwCaenChannelA1580Default"
+    41: "FwCaenChannelA1580Default"
+    42: "FwCaenChannelA1580Default"
+    43: "FwCaenChannelA1580Default"
+    44: "FwCaenChannelA1580Default"
+    45: "FwCaenChannelA1580Default"
+    46: "FwCaenChannelA1580Default"
+    47: "FwCaenChannelA1580Default"
+    48: "FwCaenChannelA1580Default"
+]
+2026.01.22 11:56:13.581["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 11:56:13.650["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 11:56:13.650["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 11:56:40.052["INFO : CAENHVChannelConfDBInitializer -> Step 3 -> All DU's of type FwCaenChannelDefault for node  set to INVISIBLE!!"]
+2026.01.22 11:56:40.052["INFO : CAENHVChannelConfDBInitializer -> Step 3 -> END"]
+2026.01.22 11:57:21.361["+++++++++++++ Opening Panel CODEXB_HV::CODEXB_HV"]
+2026.01.22 11:57:23.762["******* Closing "]["CODEXB_HV"][0]
+2026.01.22 11:57:32.457["fwFsmTree_generateAll: Generating Device Types..."]
+2026.01.22 11:57:35.014["fwFsmTree_generateAll: Generating Object Types..."]
+2026.01.22 11:57:37.106["fwFsmTree_generateAll: Generating Tree Nodes..."]
+2026.01.22 11:57:50.505["+++++++++++++ Opening Panel CODEXB_HV::CODEXB_HV"]
+2026.01.22 11:57:53.913["*** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]["CODEXB_HV"]
+["Reporting 22-Jan-2026 11:57:53 - *** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]
+2026.01.22 11:57:53.929["******* Taking "]["CODEXB_HV"]
+2026.01.22 11:58:00.227["Param panel"]["CXHV:HV_Domain_v1"]["NOT_READY"]["Load"]["CODEXB_HV"]["CODEXB_HV"]["Load"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 11:58:11.477["Param panel"]["CXHV:FwCaenChannelA1580Default"]["OFF"]["Go_STANDBY1"]["CODEXB_HV"]["CAEN/cxcaen01/board08/channel000"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.enableCircuit to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.enableCircuit. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.i0 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.i0. Value = 10"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.i1 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.i1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.rDwn to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.rDwn. Value = 75"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.rUp to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.rUp. Value = 75"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripTime to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripTime. Value = 3"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripInt to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripInt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.tripExt to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.tripExt. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.v0 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.v0. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.v1 to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.v1. Value = 0"]
+["Setting CXHV:CAEN/cxcaen01/board08/channel000.settings.vMaxSoftValue to same value as CXHV:CAEN/cxcaen01/board08/channel000.readBackSettings.vMaxSoftValue. Value = 600"]
+2026.01.22 11:59:54.197["Param panel"]["CXHV:FwCaenChannelA1580Default"]["OFF"]["Go_STANDBY1"]["CODEXB_HV"]["CAEN/cxcaen01/board08/channel000"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 12:01:20.799["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 12:01:20.843["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 12:01:20.843["GETDPS"][188][dyn_string 16 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 16 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+]
+2026.01.22 12:01:20.843["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 12:01:20.908["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 12:01:20.909["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 12:02:53.713["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Save Properties created!!"]
+2026.01.22 12:02:53.762["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU's for node CODEXB_HV included!!"]
+2026.01.22 12:02:53.762["GETDPS"][188][dyn_string 32 items
+     1: "CXHV:CAEN/cxcaen01/board08/channel000"
+     2: "CXHV:CAEN/cxcaen01/board08/channel001"
+     3: "CXHV:CAEN/cxcaen01/board08/channel002"
+     4: "CXHV:CAEN/cxcaen01/board08/channel003"
+     5: "CXHV:CAEN/cxcaen01/board08/channel004"
+     6: "CXHV:CAEN/cxcaen01/board08/channel005"
+     7: "CXHV:CAEN/cxcaen01/board08/channel006"
+     8: "CXHV:CAEN/cxcaen01/board08/channel007"
+     9: "CXHV:CAEN/cxcaen01/board09/channel000"
+    10: "CXHV:CAEN/cxcaen01/board09/channel001"
+    11: "CXHV:CAEN/cxcaen01/board09/channel002"
+    12: "CXHV:CAEN/cxcaen01/board09/channel003"
+    13: "CXHV:CAEN/cxcaen01/board09/channel004"
+    14: "CXHV:CAEN/cxcaen01/board09/channel005"
+    15: "CXHV:CAEN/cxcaen01/board09/channel006"
+    16: "CXHV:CAEN/cxcaen01/board09/channel007"
+    17: "CXHV:CAEN/cxcaen01/board08/channel000"
+    18: "CXHV:CAEN/cxcaen01/board08/channel001"
+    19: "CXHV:CAEN/cxcaen01/board08/channel002"
+    20: "CXHV:CAEN/cxcaen01/board08/channel003"
+    21: "CXHV:CAEN/cxcaen01/board08/channel004"
+    22: "CXHV:CAEN/cxcaen01/board08/channel005"
+    23: "CXHV:CAEN/cxcaen01/board08/channel006"
+    24: "CXHV:CAEN/cxcaen01/board08/channel007"
+    25: "CXHV:CAEN/cxcaen01/board09/channel000"
+    26: "CXHV:CAEN/cxcaen01/board09/channel001"
+    27: "CXHV:CAEN/cxcaen01/board09/channel002"
+    28: "CXHV:CAEN/cxcaen01/board09/channel003"
+    29: "CXHV:CAEN/cxcaen01/board09/channel004"
+    30: "CXHV:CAEN/cxcaen01/board09/channel005"
+    31: "CXHV:CAEN/cxcaen01/board09/channel006"
+    32: "CXHV:CAEN/cxcaen01/board09/channel007"
+][dyn_string 32 items
+     1: "FwCaenChannelA1580Default"
+     2: "FwCaenChannelA1580Default"
+     3: "FwCaenChannelA1580Default"
+     4: "FwCaenChannelA1580Default"
+     5: "FwCaenChannelA1580Default"
+     6: "FwCaenChannelA1580Default"
+     7: "FwCaenChannelA1580Default"
+     8: "FwCaenChannelA1580Default"
+     9: "FwCaenChannelA1580Default"
+    10: "FwCaenChannelA1580Default"
+    11: "FwCaenChannelA1580Default"
+    12: "FwCaenChannelA1580Default"
+    13: "FwCaenChannelA1580Default"
+    14: "FwCaenChannelA1580Default"
+    15: "FwCaenChannelA1580Default"
+    16: "FwCaenChannelA1580Default"
+    17: "FwCaenChannelA1580Default"
+    18: "FwCaenChannelA1580Default"
+    19: "FwCaenChannelA1580Default"
+    20: "FwCaenChannelA1580Default"
+    21: "FwCaenChannelA1580Default"
+    22: "FwCaenChannelA1580Default"
+    23: "FwCaenChannelA1580Default"
+    24: "FwCaenChannelA1580Default"
+    25: "FwCaenChannelA1580Default"
+    26: "FwCaenChannelA1580Default"
+    27: "FwCaenChannelA1580Default"
+    28: "FwCaenChannelA1580Default"
+    29: "FwCaenChannelA1580Default"
+    30: "FwCaenChannelA1580Default"
+    31: "FwCaenChannelA1580Default"
+    32: "FwCaenChannelA1580Default"
+]
+2026.01.22 12:02:53.763["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> All DU DPE's for node CODEXB_HV included!!"]
+2026.01.22 12:02:53.832["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> Standard Recipes created!!"]
+2026.01.22 12:02:53.833["INFO : CAENHVChannelConfDBInitializer -> Step 2 -> END"]
+2026.01.22 12:03:37.013["Param panel"]["CXHV:HV_Domain_v1"]["NOT_READY"]["Load"]["CODEXB_HV"]["CODEXB_HV"]["Load"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 12:03:56.267["Param panel"]["CXHV:FwCaenChannelA1580Default"]["OFF"]["Go_STANDBY1"]["CODEXB_HV"]["CAEN/cxcaen01/board08/channel000"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 12:04:19.689["******* Closing "]["CODEXB_HV"][0]
+2026.01.22 12:04:19.690["******* Releasing "]["CODEXB_HV"]
+2026.01.22 12:05:15.192["+++++++++++++ Opening Panel CODEXB_HV::CAEN/cxcaen01/board08/channel000"]
+2026.01.22 12:05:19.796["+++++++++++++ Opening Panel CODEXB_HV::CODEXB_HV"]
+2026.01.22 12:05:23.233["*** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]["CODEXB_HV"]
+["Reporting 22-Jan-2026 12:05:23 - *** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]
+2026.01.22 12:05:23.248["******* Taking "]["CODEXB_HV"]
+2026.01.22 12:05:28.820["Param panel"]["CXHV:FwCaenChannelA1580Default"]["OFF"]["Go_STANDBY1"]["CODEXB_HV"]["CAEN/cxcaen01/board08/channel000"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 12:06:12.915["******* Closing "]["CAEN/cxcaen01/board08/channel000"][0]
+2026.01.22 12:06:14.151["******* Closing "]["CODEXB_HV"][0]
+2026.01.22 12:06:14.152["******* Releasing "]["CODEXB_HV"]
+2026.01.22 15:19:30.204["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]
+2026.01.22 15:21:19.040["+++++++++++++ Opening Panel CODEXB_HV::CODEXB_HV"]
+2026.01.22 15:21:26.156["******* Closing "]["CODEXB_HV"][0]
+2026.01.22 15:21:35.134["+++++++++++++ Opening Panel CODEXB_HV::CODEXB_HV"]
+2026.01.22 15:21:48.855["*** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]["CODEXB_HV"]
+["Reporting 22-Jan-2026 15:21:48 - *** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]
+2026.01.22 15:21:48.867["******* Taking "]["CODEXB_HV"]
+2026.01.22 15:21:52.458["Param panel"]["CXHV:FwFSMConfDB_HV"]["NOT_READY"]["LOAD"]["CODEXB_HV"]["CODEXB_HV_ConfDB"]["LOAD"][dyn_string 1 items
+     1: "string sMode = \"PHYSICS\""
+]
+2026.01.22 15:24:01.955["Param panel"]["CXHV:HV_Domain_v1"]["NOT_READY"]["Go_STANDBY1"]["CODEXB_HV"]["CODEXB_HV"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+["Reporting 22-Jan-2026 15:26:20 - Restarting FSM Tree CODEXB_HV on System: CXHV"]
+2026.01.22 15:26:28.073["*** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]["CODEXB_HV"]
+["Reporting 22-Jan-2026 15:26:28 - *** INFO - petersm@cxhv01 issued Take to CODEXB_HV"]
+2026.01.22 15:26:28.089["******* Taking "]["CODEXB_HV"]
+2026.01.22 15:26:30.312["Param panel"]["CXHV:FwFSMConfDB_HV"]["NOT_READY"]["LOAD"]["CODEXB_HV"]["CODEXB_HV_ConfDB"]["LOAD"][dyn_string 1 items
+     1: "string sMode = \"PHYSICS\""
+]
+2026.01.22 15:26:44.716["Param panel"]["CXHV:HV_Domain_v1"]["NOT_READY"]["Go_STANDBY1"]["CODEXB_HV"]["CODEXB_HV"]["Go_STANDBY1"][dyn_string 1 items
+     1: "string RUN_TYPE = \"PHYSICS\""
+]
+2026.01.22 16:15:00.318["******* Closing "]["CODEXB_HV"][0]
+2026.01.22 16:15:00.320["******* Releasing "]["CODEXB_HV"]
+2026.01.22 16:15:57.419["System Name: CXHV: System Number: 1401 - FwFsm: version is 3503"]

@@ -1,0 +1,62 @@
+#uses "FwCaenCrateSY1527Default.ctl"
+CXHV_CAEN_cxcaen01_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01");
+   if(!globalExists("FwCaenCrateSY1527Default_CurrDUActions"))
+   {
+      addGlobal("FwCaenCrateSY1527Default_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenCrateSY1527Default",FwCaenCrateSY1527Default_CurrDUActions);
+   }
+   FwCaenCrateSY1527Default_initialize("CXHV", devdp);
+   fwDU_setDefaultParameters("CXHV", devdp);
+   if(dpConnect("cbCXHV_CAEN_cxcaen01_valueChanged",
+      devdp+".FrontPanOutP.FrontPanOut:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCXHV_CAEN_cxcaen01_doCommand",false,
+     "CXHV|CAEN/cxcaen01.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CXHV_CAEN_cxcaen01_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CXHV CAEN/cxcaen01");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01");
+   if(dpDisconnect("cbCXHV_CAEN_cxcaen01_valueChanged",
+      devdp+".FrontPanOutP.FrontPanOut:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCXHV_CAEN_cxcaen01_doCommand",
+     "CXHV|CAEN/cxcaen01.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCXHV_CAEN_cxcaen01_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01");
+   fwDU_convertValue("CXHV","CAEN/cxcaen01");
+   FwCaenCrateSY1527Default_valueChanged("CXHV", devdp,
+      x1, state );
+   fwDU_setState("CXHV", devdp, state);
+}
+
+cbCXHV_CAEN_cxcaen01_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01");
+   command = fwDU_convertCommand("CXHV","CAEN/cxcaen01","FwCaenCrateSY1527Default", FwCaenCrateSY1527Default_CurrDUActions, command);
+   FwCaenCrateSY1527Default_doCommand("CXHV", devdp, command);
+}
+
