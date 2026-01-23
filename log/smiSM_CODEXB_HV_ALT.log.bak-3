@@ -1,0 +1,44 @@
+
+ SMI++ State Manager Version - v67r2- Date : 25-September-2024:14:09
+
+Options:
+ -d 1 -u 1 -t 1 -dns cxhv01 -loopMaxChanges 25 -loopMaxChangesFatal 5000 -loopMinDuration -1
+
+    SMI Domain : CODEXB_HV_ALT
+    Input File : /opt/winccoa_projects/CXHV/smi/CODEXB_HV_ALT.sobj
+
+2026.01.23 11:28:50.968 - SMI++ Initiator started
+ Number of SMI Objects instantiated : 12
+ Number of SMI Classes instantiated : 8
+ Number of Object Sets instantiated : 6
+2026.01.23 11:28:50.975 - SMI++ Initiator Finished
+
+2026.01.23 11:28:50.975 - SMI++   Logic Engine started execution
+2026.01.23 11:28:50.975 - <&ALLOC> starting up in state <NOT_ALLOCATED>
+2026.01.23 11:28:50.975 - <&DOMAIN> starting up in state <READY>
+2026.01.23 11:28:50.975 - <HV_DOMAIN_V1_FWDM> starting up in state <READY>
+2026.01.23 11:28:50.975 - <C> starting up in state <NOT_READY>
+2026.01.23 11:28:50.975 - <FS> starting up in state <NOT_READY>
+2026.01.23 11:28:50.975 - <LG> starting up in state <NOT_READY>
+2026.01.23 11:28:50.975 - <RB> starting up in state <NOT_READY>
+2026.01.23 11:28:50.975 - <CODEXB_HV_ALT> starting up in state <NOT_READY>
+2026.01.23 11:28:50.975 - <CODEXB_HV_ALT_FWCNM> starting up in state <COMPLETE>
+2026.01.23 11:28:50.975 - <CODEXB_HV_ALT_FWM> starting up in state <EXCLUDED>
+2026.01.23 11:28:50.975 - <FWDEVMODE_FWDM> starting up in state <READY>
+2026.01.23 11:28:50.976 - CODEXB_HV_ALT_FWDM starting up in state :&INITIAL
+2026.01.23 11:28:50.976 - <&ALLOC> in state <NOT_ALLOCATED>
+2026.01.23 11:28:50.976 - <&DOMAIN> in state <READY>
+2026.01.23 11:28:50.976 - <HV_DOMAIN_V1_FWDM> in state <READY>
+2026.01.23 11:28:50.976 - <C> in state <NOT_READY>
+2026.01.23 11:28:50.976 - <FS> in state <NOT_READY>
+2026.01.23 11:28:50.976 - <LG> in state <NOT_READY>
+2026.01.23 11:28:50.976 - <RB> in state <NOT_READY>
+2026.01.23 11:28:50.976 - <CODEXB_HV_ALT> in state <NOT_READY>
+2026.01.23 11:28:50.976 - <CODEXB_HV_ALT_FWCNM> in state <COMPLETE>
+2026.01.23 11:28:50.976 - <CODEXB_HV_ALT_FWM> in state <EXCLUDED>
+2026.01.23 11:28:50.976 - <FWDEVMODE_FWDM> in state <READY>
+2026.01.23 11:28:50.976 - <CODEXB_HV_ALT_FWDM> in state <DEAD> converted from <$DEAD>
+2026.01.23 11:28:51.828 - <CODEXB_HV_ALT_FWDM> in state <DEAD> converted from <$DEAD>
+2026.01.23 11:28:51.854 - <CODEXB_HV_ALT_FWDM> in state <ENABLED>
+2026.01.23 11:29:13.086 - <CODEXB_HV_ALT_FWDM> in state <DEAD> converted from <$DEAD>
+2026.01.23 11:29:14.261 - <CODEXB_HV_ALT_FWDM> in state <ENABLED>

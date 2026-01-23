@@ -11393,3 +11393,450 @@ opc_ua_client = 1
 update      = 0
 
 
+WCCILdataSQLite(0), 2026.01.23 04:00:00.013, PARAM,INFO,      113, Online-Backup of database, Entering backup mode, functionality will be restricted
+WCCILdataSQLite(0), 2026.01.23 04:01:00.103, PARAM,INFO,      113, Online-Backup of database, Leaving backup mode, now processing cached messages...
+WCCILevent   (0), 2026.01.23 11:19:32.163, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 11:19:32.164, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 11:19:32.209, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:19:32.212, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:19:32.214, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:19:32.216, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:19:32.217, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:19:32.221, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:19:32.227, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:19:32.227, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:19:32.228, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:19:32.228, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:19:32.229, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAui      (2), 2026.01.23 11:24:03.104, CTRL, WARNING,    13/uim, 
+    Module: Vision_1
+    Panel: /opt/winccoa_projects/CXHV/panels/lbCaenHV/lbCaenHV_ConfDBInitializer.pnl [CAEN HV ConfDB Initializer]
+    Object: 3 named: "Button1" of type: PUSH_BUTTON
+    Script: Clicked
+    Line: 107, In "RadioButton1.number": Object "RadioButton1" does not exist
+WCCOAui      (2), 2026.01.23 11:24:03.116, CTRL, WARNING,    13/uim, 
+    Module: Vision_1
+    Panel: /opt/winccoa_projects/CXHV/panels/lbCaenHV/lbCaenHV_ConfDBInitializer.pnl [CAEN HV ConfDB Initializer]
+    Object: 3 named: "Button1" of type: PUSH_BUTTON
+    Script: Clicked
+    Line: 112, In "RadioButton1.number": Object "RadioButton1" does not exist
+WCCOActrl    (50), 2026.01.23 11:25:31.093, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOActrl    (50), 2026.01.23 11:25:31.094, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 P015 platform Linux x86_64 linked at Nov  4 2024 20:27:39 (d529474b86f)
+WCCOActrl    (50), 2026.01.23 11:25:31.094, SYS,  INFO,        1, Manager Start, fwFSM/fwFsmDeviceHandler.ctl
+WCCOActrl    (50), 2026.01.23 11:25:31.094, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (50), 2026.01.23 11:25:31.095, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:25:31.096, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:25:31.099, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:25:31.104, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (50), 2026.01.23 11:25:31.104, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (50), 2026.01.23 11:25:31.105, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:25:31.106, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:25:31.106, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:25:31.107, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (50), 2026.01.23 11:25:31.107, SYS,  INFO,      103, User names/passwords initialized
+WCCOActrl    (50), 2026.01.23 11:26:57.188, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|LG.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 11:26:57.450, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 11:26:57.451, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Status code: Itc_Tp_Read_Call_Failed, errno: Connection reset by peer (104)
+WCCOAsmi     (10), 2026.01.23 11:26:57.496, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:26:57.498, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:26:57.500, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:26:57.500, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:26:57.501, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:26:57.504, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:26:57.508, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:26:57.508, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:26:57.508, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:26:57.509, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:26:57.510, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:26:57.889, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CODEXB_HV/LG_FWDM.fsm.currentState, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 11:27:12.727, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|RB.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 11:27:12.943, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 11:27:12.943, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 11:27:12.981, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:27:12.983, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:27:12.984, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:27:12.985, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:12.985, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:12.987, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:27:12.991, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:27:12.991, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:27:12.991, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:27:12.992, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:12.992, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:27:13.422, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CODEXB_HV/RB_FWDM.fsm.currentState, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 11:27:31.910, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|FS.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 11:27:32.142, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 11:27:32.142, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 11:27:32.183, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:27:32.185, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:27:32.186, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:27:32.186, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:32.187, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:32.190, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:27:32.193, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:27:32.193, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:27:32.193, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:27:32.194, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:32.195, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:27:32.601, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CODEXB_HV/FS_FWDM.fsm.currentState, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 11:27:40.874, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|C.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 11:27:41.077, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 11:27:41.078, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 11:27:41.113, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:27:41.115, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:27:41.115, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:27:41.116, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:41.117, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:41.119, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:27:41.122, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:27:41.123, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:27:41.123, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:27:41.124, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:27:41.124, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:27:41.568, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CODEXB_HV/C_FWDM.fsm.currentState, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 11:27:50.154, SYS,  INFO,      108, License information, License changed
+
+version     = 32000000
+sn          = "CodeMeter sn:130-1382261589"
+expire      = 0000.00.00;00:00:00,000 
+ui          = 2
+para        = 1
+event       = 1
+ios         = 2000000000
+ssi         = 0
+archive     = 3
+ctrl        = 5
+distributed = 1
+opc_ua_client = 1
+update      = 0
+
+
+WCCOActrl    (50), 2026.01.23 11:28:15.974, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CAEN/cxcaen01/board08/channel000.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 11:28:15.974, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|CAEN/cxcaen01/board08/channel000.fsm.sendCommand, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 11:28:16.200, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 11:28:16.200, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 11:28:16.240, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:28:16.242, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:28:16.252, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:28:16.253, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:28:16.254, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:28:16.256, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:28:16.260, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:28:16.260, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:28:16.260, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:28:16.261, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:28:16.262, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:28:51.820, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_CENTER_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:28:51.821, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:28:51.821, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:28:51.822, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:28:51.823, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_LG_i_install
+WCCOAui      (1), 2026.01.23 11:29:12.861, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, LEFT_GROUND|LEFT_GROUND.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 11:29:12.861, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, LEFT_GROUND|LEFT_GROUND.:_alert_hdl.._type
+WCCOActrl    (50), 2026.01.23 11:29:12.866, PARAM,WARNING,   107, Automatic disconnect of attributes due to config type change, DP: CXHV:CODEXB_HV|LG_i.mode.enabled, MAN: (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 11:29:13.085, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 11:29:13.085, SYS,  WARNING,    39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Status code: Itc_Tp_Read_Call_Failed, errno: Connection reset by peer (104)
+WCCOAsmi     (10), 2026.01.23 11:29:13.122, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 11:29:13.125, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 11:29:13.125, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 11:29:13.126, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:29:13.126, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:29:13.129, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 11:29:13.133, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 11:29:13.133, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 11:29:13.133, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 11:29:13.134, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 11:29:13.134, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 11:30:34.943, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_CENTER_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:30:34.944, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:30:34.944, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:30:34.944, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:31:39.020, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_CENTER_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:31:39.021, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:31:39.021, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_install
+WCCOActrl    (50), 2026.01.23 11:31:39.021, CTRL, WARNING,    72, Function not defined, 
+    Script: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/fwFSM/fwFsmDeviceHandler.ctl
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 7886, startThread, CODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_install
+WCCILevent   (0), 2026.01.23 12:13:55.824, PARAM,INFO,        0, , Terminate manager (SYS: 1401 Ctrl -num 50 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:13:55.825, SYS,  INFO,        0, , MAN: (SYS: 1401 Event -num 0 CONN: 1), SHUT_DOWN_MANAGER received
+WCCOActrl    (50), 2026.01.23 12:13:55.826, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:13:55.826, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILevent   (0), 2026.01.23 12:13:55.827, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.23 12:13:55.826, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:13:55.827, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:13:55.827, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:13:55.827, SYS,  SEVERE,     54, Unexpected state, CtrlMgr, doConnectionClose, Lost Connection to Event Manager, exiting ...
+WCCOActrl    (50), 2026.01.23 12:13:55.919, SYS,  INFO,        2, Manager Stop
+WCCOAsmi     (10), 2026.01.23 12:13:59.892, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOAsmi     (10), 2026.01.23 12:13:59.892, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 12:13:59.892, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:13:59.893, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 12:13:59.893, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:13:59.893, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:13:59.894, SYS,  INFO,        2, Manager Stop
+WCCOAui      (1), 2026.01.23 12:16:20.856, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:16:20.856, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._type
+WCCOAui      (1), 2026.01.23 12:16:20.865, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:16:20.865, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._type
+WCCOAui      (1), 2026.01.23 12:16:20.872, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:16:20.872, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001LEFT_GROUND|&0001LEFT_GROUND.:_alert_hdl.._type
+WCCILevent   (0), 2026.01.23 12:17:55.061, SYS,  INFO,      108, License information, License changed
+
+version     = 32000000
+sn          = "CodeMeter sn:130-1382261589"
+expire      = 0000.00.00;00:00:00,000 
+ui          = 2
+para        = 1
+event       = 1
+ios         = 2000000000
+ssi         = 0
+archive     = 3
+ctrl        = 4
+distributed = 1
+opc_ua_client = 1
+update      = 0
+
+
+WCCOAui      (1), 2026.01.23 12:18:06.675, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:18:06.675, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._type
+WCCOAui      (1), 2026.01.23 12:18:06.685, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:18:06.686, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._type
+WCCOAui      (1), 2026.01.23 12:18:06.694, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8565, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._active
+WCCOAui      (1), 2026.01.23 12:18:06.694, CTRL, WARNING,    71, DP does not exist, 
+    Module: Device Editor Navigator (GEDI)
+    Panel: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/panels/fwFSM/ui/fwFsmDomains.pnl [DEN]
+    Object: 0 named: "Tree_3" of type: TREE (.Tree_3)
+    In reference: fwTreeDisplay/fwTree.pnl Group: 7 named: ""
+    Script: rightClicked
+    Library: /group/online/ecs/PVSSShortcutProjects319/GlobalProject/scripts/libs/fwFSM/fwFsm.ctl
+    Line: 8567, dpSetTimedWait, &0001RIGHT_BACK|&0001RIGHT_BACK.:_alert_hdl.._type
+WCCOAui      (2), 2026.01.23 12:20:10.042, CTRL, WARNING,    13/uim, 
+    Module: Vision_1
+    Panel: /opt/winccoa_projects/CXHV/panels/lbCaenHV/lbCaenHV_ConfDBInitializer.pnl [CAEN HV ConfDB Initializer]
+    Object: 3 named: "Button1" of type: PUSH_BUTTON
+    Script: Clicked
+    Line: 107, In "RadioButton1.number": Object "RadioButton1" does not exist
+WCCOAui      (2), 2026.01.23 12:20:10.045, CTRL, WARNING,    13/uim, 
+    Module: Vision_1
+    Panel: /opt/winccoa_projects/CXHV/panels/lbCaenHV/lbCaenHV_ConfDBInitializer.pnl [CAEN HV ConfDB Initializer]
+    Object: 3 named: "Button1" of type: PUSH_BUTTON
+    Script: Clicked
+    Line: 112, In "RadioButton1.number": Object "RadioButton1" does not exist
+WCCOAui      (2), 2026.01.23 12:21:16.829, CTRL, SEVERE,      0, , Recipe Cache HV_TEST/Go_STANDBY1 does not exist
+WCCOAui      (2), 2026.01.23 12:21:16.833, CTRL, SEVERE,      0, , Recipe Cache HV_TEST/Go_STANDBY2 does not exist
+WCCOAui      (2), 2026.01.23 12:21:16.837, CTRL, SEVERE,      0, , Recipe Cache HV_TEST/Go_READY does not exist
+WCCOAui      (2), 2026.01.23 12:21:46.479, CTRL, SEVERE,      0, , Recipe Cache ECO65/Go_STANDBY1 does not exist
+WCCOAui      (2), 2026.01.23 12:21:46.485, CTRL, SEVERE,      0, , Recipe Cache ECO65/Go_STANDBY2 does not exist
+WCCOAui      (2), 2026.01.23 12:21:46.490, CTRL, SEVERE,      0, , Recipe Cache ECO65/Go_READY does not exist
+WCCOActrl    (50), 2026.01.23 12:22:11.702, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOActrl    (50), 2026.01.23 12:22:11.703, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 P015 platform Linux x86_64 linked at Nov  4 2024 20:27:39 (d529474b86f)
+WCCOActrl    (50), 2026.01.23 12:22:11.703, SYS,  INFO,        1, Manager Start, fwFSM/fwFsmDeviceHandler.ctl
+WCCOActrl    (50), 2026.01.23 12:22:11.703, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (50), 2026.01.23 12:22:11.704, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.705, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.708, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 12:22:11.712, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (50), 2026.01.23 12:22:11.712, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (50), 2026.01.23 12:22:11.712, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 12:22:11.713, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.714, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 12:22:11.714, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (50), 2026.01.23 12:22:11.714, SYS,  INFO,      103, User names/passwords initialized
+WCCOAsmi     (10), 2026.01.23 12:22:11.817, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 12:22:11.823, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 12:22:11.825, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 12:22:11.826, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.826, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.830, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 12:22:11.836, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 12:22:11.836, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 12:22:11.837, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 12:22:11.837, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:11.838, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCILevent   (0), 2026.01.23 12:22:47.404, PARAM,INFO,        0, , Terminate manager (SYS: 1401 Ctrl -num 50 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:22:47.404, SYS,  INFO,        0, , MAN: (SYS: 1401 Event -num 0 CONN: 1), SHUT_DOWN_MANAGER received
+WCCOActrl    (50), 2026.01.23 12:22:47.405, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:22:47.405, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 12:22:47.405, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 12:22:47.405, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:22:47.405, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:22:47.405, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:22:47.406, SYS,  SEVERE,     54, Unexpected state, CtrlMgr, doConnectionClose, Lost Connection to Event Manager, exiting ...
+WCCOActrl    (50), 2026.01.23 12:22:47.451, SYS,  INFO,        2, Manager Stop
+WCCOAsmi     (10), 2026.01.23 12:22:51.474, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOAsmi     (10), 2026.01.23 12:22:51.475, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 12:22:51.475, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:22:51.475, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 12:22:51.475, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:22:51.475, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:22:51.476, SYS,  INFO,        2, Manager Stop
+WCCOActrl    (50), 2026.01.23 12:22:54.568, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOActrl    (50), 2026.01.23 12:22:54.569, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 P015 platform Linux x86_64 linked at Nov  4 2024 20:27:39 (d529474b86f)
+WCCOActrl    (50), 2026.01.23 12:22:54.569, SYS,  INFO,        1, Manager Start, fwFSM/fwFsmDeviceHandler.ctl
+WCCOActrl    (50), 2026.01.23 12:22:54.569, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOActrl    (50), 2026.01.23 12:22:54.570, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.570, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.574, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 12:22:54.577, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOActrl    (50), 2026.01.23 12:22:54.577, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOActrl    (50), 2026.01.23 12:22:54.577, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 12:22:54.578, SYS,  INFO,        4, Connected to (SYS: 1401 Ctrl -num 50 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.579, SYS,  INFO,        0, , Manager (SYS: 1401 Ctrl -num 50 CONN: 1) initialised
+WCCOActrl    (50), 2026.01.23 12:22:54.579, SYS,  INFO,      102, Waiting for user names/passwords
+WCCOActrl    (50), 2026.01.23 12:22:54.579, SYS,  INFO,      103, User names/passwords initialized
+WCCOAsmi     (10), 2026.01.23 12:22:54.620, PARAM,WARNING,   224, Security issue: Username or Password entry found in config file!
+WCCOAsmi     (10), 2026.01.23 12:22:54.623, SYS,  INFO,        1, Manager Start, PROJ, CXHV, V 3.19 - 3.19 platform Linux x86_64 linked at Nov 21 2024 18:15:52
+WCCOAsmi     (10), 2026.01.23 12:22:54.624, SYS,  INFO,        3, Trying to connect to (SYS: 0 Data -num 0 CONN: 1) @ localhost:4897
+WCCOAsmi     (10), 2026.01.23 12:22:54.624, SYS,  INFO,        4, Connected to (SYS: 0 Data -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.625, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.627, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCOAsmi     (10), 2026.01.23 12:22:54.631, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCOAsmi     (10), 2026.01.23 12:22:54.631, SYS,  INFO,        3, Trying to connect to (SYS: 1401 Event -num 0 CONN: 1) @ localhost:4998
+WCCOAsmi     (10), 2026.01.23 12:22:54.631, SYS,  INFO,        4, Connected to (SYS: 1401 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILevent   (0), 2026.01.23 12:22:54.632, SYS,  INFO,        4, Connected to (SYS: 1401 Device -num 10 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.23 12:22:54.633, SYS,  INFO,        0, , Manager (SYS: 1401 Device -num 10 CONN: 1) initialised
+WCCILevent   (0), 2026.01.23 12:23:21.241, PARAM,INFO,        0, , Terminate manager (SYS: 1401 Ctrl -num 50 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:23:21.242, SYS,  INFO,        0, , MAN: (SYS: 1401 Event -num 0 CONN: 1), SHUT_DOWN_MANAGER received
+WCCOActrl    (50), 2026.01.23 12:23:21.243, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOActrl    (50), 2026.01.23 12:23:21.243, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 12:23:21.243, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 12:23:21.243, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Ctrl -num 50 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:23:21.243, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:23:21.243, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOActrl    (50), 2026.01.23 12:23:21.244, SYS,  SEVERE,     54, Unexpected state, CtrlMgr, doConnectionClose, Lost Connection to Event Manager, exiting ...
+WCCOActrl    (50), 2026.01.23 12:23:21.297, SYS,  INFO,        2, Manager Stop
+WCCOAsmi     (10), 2026.01.23 12:23:25.311, SYS,  INFO,      181, Closing connection to (SYS: 1401 Data -num 0 CONN: 1)
+WCCOAsmi     (10), 2026.01.23 12:23:25.311, SYS,  INFO,      181, Closing connection to (SYS: 1401 Event -num 0 CONN: 1)
+WCCILdataSQLite(0), 2026.01.23 12:23:25.311, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCILevent   (0), 2026.01.23 12:23:25.311, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Device -num 10 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:23:25.311, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Event -num 0 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:23:25.312, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1401 Data -num 0 CONN: 1), Connection closed
+WCCOAsmi     (10), 2026.01.23 12:23:25.312, SYS,  INFO,        2, Manager Stop

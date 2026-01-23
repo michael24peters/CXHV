@@ -1,4 +1,180 @@
 #uses "FwDevMode.ctl"
+CODEXB_HV_CODEXB_HV_CENTER_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/CENTER_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("CODEXB_HV", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV", devdp);
+   if(dpConnect("cbCODEXB_HV_CODEXB_HV_CENTER_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+CODEXB_HV_CODEXB_HV_CENTER_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV CODEXB_HV/CENTER_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/CENTER_FWDM");
+   if(dpDisconnect("cbCODEXB_HV_CODEXB_HV_CENTER_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbCODEXB_HV_CODEXB_HV_CENTER_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/CENTER_FWDM");
+   fwDU_convertValue("CODEXB_HV","CODEXB_HV/CENTER_FWDM");
+   FwDevMode_valueChanged("CODEXB_HV", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV", devdp, state);
+}
+
+CODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/FRONT_SKY_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("CODEXB_HV", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV", devdp);
+   if(dpConnect("cbCODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+CODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV CODEXB_HV/FRONT_SKY_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/FRONT_SKY_FWDM");
+   if(dpDisconnect("cbCODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbCODEXB_HV_CODEXB_HV_FRONT_SKY_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/FRONT_SKY_FWDM");
+   fwDU_convertValue("CODEXB_HV","CODEXB_HV/FRONT_SKY_FWDM");
+   FwDevMode_valueChanged("CODEXB_HV", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV", devdp, state);
+}
+
+CODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/RIGHT_BACK_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("CODEXB_HV", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV", devdp);
+   if(dpConnect("cbCODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+CODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV CODEXB_HV/RIGHT_BACK_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/RIGHT_BACK_FWDM");
+   if(dpDisconnect("cbCODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbCODEXB_HV_CODEXB_HV_RIGHT_BACK_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/RIGHT_BACK_FWDM");
+   fwDU_convertValue("CODEXB_HV","CODEXB_HV/RIGHT_BACK_FWDM");
+   FwDevMode_valueChanged("CODEXB_HV", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV", devdp, state);
+}
+
+CODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/LEFT_GROUND_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("CODEXB_HV", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV", devdp);
+   if(dpConnect("cbCODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+CODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV CODEXB_HV/LEFT_GROUND_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/LEFT_GROUND_FWDM");
+   if(dpDisconnect("cbCODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbCODEXB_HV_CODEXB_HV_LEFT_GROUND_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV/LEFT_GROUND_FWDM");
+   fwDU_convertValue("CODEXB_HV","CODEXB_HV/LEFT_GROUND_FWDM");
+   FwDevMode_valueChanged("CODEXB_HV", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV", devdp, state);
+}
+
 CODEXB_HV_CODEXB_HV_FWDM_install()
 {
    string devdp;

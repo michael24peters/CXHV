@@ -76,3 +76,28 @@ WCCOAsmi(10) - Thu Jan 22 16:15:13 2026
 	Exiting... 
 WCCOAsmi(10) - Thu Jan 22 16:15:57 2026
 	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:19:32 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:26:57 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:27:13 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:27:32 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:27:41 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:28:16 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 11:29:13 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 12:13:59 2026
+	Exiting... 
+WCCOAsmi(10) - Fri Jan 23 12:22:11 2026
+	PVSSSys1401:SMIHandler started
+PID 113073 - Fri Jan 23 12:22:48 2026 - (ERROR) Writing (non-blocking) to 113082@cxhv01.lbdaq.cern.ch: Connection reset by peer
+WCCOAsmi(10) - Fri Jan 23 12:22:51 2026
+	Exiting... 
+WCCOAsmi(10) - Fri Jan 23 12:22:54 2026
+	PVSSSys1401:SMIHandler started
+WCCOAsmi(10) - Fri Jan 23 12:23:25 2026
+	Exiting... 
