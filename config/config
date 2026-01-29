@@ -11,6 +11,11 @@ distributed = 1
 userName = "root"
 password = ""
 mxProxy = "none"
+pmonPort = 14010
+dataPort = 14011
+eventPort = 14012
+[dist]
+distPort = 14017
 [ui]
 #--------- begin lbFsmDomains         - Do not edit it manually
 LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
