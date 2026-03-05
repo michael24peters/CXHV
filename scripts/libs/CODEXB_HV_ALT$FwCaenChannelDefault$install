@@ -1,0 +1,245 @@
+#uses "FwCaenChannelDefault.ctl"
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel000");
+   if(!globalExists("FwCaenChannelDefault_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelDefault_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelDefault",FwCaenChannelDefault_CurrDUActions);
+   }
+   FwCaenChannelDefault_initialize("CODEXB_HV_ALT", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV_ALT", devdp);
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_doCommand",false,
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel000.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV_ALT CAEN/cxcaen01/board01/channel000");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel000");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_doCommand",
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel000.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel000");
+   fwDU_convertValue("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel000");
+   FwCaenChannelDefault_valueChanged("CODEXB_HV_ALT", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV_ALT", devdp, state);
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel000_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel000");
+   command = fwDU_convertCommand("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel000","FwCaenChannelDefault", FwCaenChannelDefault_CurrDUActions, command);
+   FwCaenChannelDefault_doCommand("CODEXB_HV_ALT", devdp, command);
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel001");
+   if(!globalExists("FwCaenChannelDefault_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelDefault_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelDefault",FwCaenChannelDefault_CurrDUActions);
+   }
+   FwCaenChannelDefault_initialize("CODEXB_HV_ALT", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV_ALT", devdp);
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_doCommand",false,
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel001.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV_ALT CAEN/cxcaen01/board01/channel001");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel001");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_doCommand",
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel001.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel001");
+   fwDU_convertValue("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel001");
+   FwCaenChannelDefault_valueChanged("CODEXB_HV_ALT", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV_ALT", devdp, state);
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel001_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel001");
+   command = fwDU_convertCommand("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel001","FwCaenChannelDefault", FwCaenChannelDefault_CurrDUActions, command);
+   FwCaenChannelDefault_doCommand("CODEXB_HV_ALT", devdp, command);
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel002");
+   if(!globalExists("FwCaenChannelDefault_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelDefault_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelDefault",FwCaenChannelDefault_CurrDUActions);
+   }
+   FwCaenChannelDefault_initialize("CODEXB_HV_ALT", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV_ALT", devdp);
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_doCommand",false,
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel002.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV_ALT CAEN/cxcaen01/board01/channel002");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel002");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_doCommand",
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel002.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel002");
+   fwDU_convertValue("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel002");
+   FwCaenChannelDefault_valueChanged("CODEXB_HV_ALT", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV_ALT", devdp, state);
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel002_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel002");
+   command = fwDU_convertCommand("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel002","FwCaenChannelDefault", FwCaenChannelDefault_CurrDUActions, command);
+   FwCaenChannelDefault_doCommand("CODEXB_HV_ALT", devdp, command);
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel003");
+   if(!globalExists("FwCaenChannelDefault_CurrDUActions"))
+   {
+      addGlobal("FwCaenChannelDefault_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwCaenChannelDefault",FwCaenChannelDefault_CurrDUActions);
+   }
+   FwCaenChannelDefault_initialize("CODEXB_HV_ALT", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV_ALT", devdp);
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_doCommand",false,
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel003.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV_ALT CAEN/cxcaen01/board01/channel003");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel003");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_valueChanged",
+      devdp+".actual.status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_doCommand",
+     "CODEXB_HV_ALT|CAEN/cxcaen01/board01/channel003.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel003");
+   fwDU_convertValue("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel003");
+   FwCaenChannelDefault_valueChanged("CODEXB_HV_ALT", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV_ALT", devdp, state);
+}
+
+cbCODEXB_HV_ALT_CAEN_cxcaen01_board01_channel003_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CAEN/cxcaen01/board01/channel003");
+   command = fwDU_convertCommand("CODEXB_HV_ALT","CAEN/cxcaen01/board01/channel003","FwCaenChannelDefault", FwCaenChannelDefault_CurrDUActions, command);
+   FwCaenChannelDefault_doCommand("CODEXB_HV_ALT", devdp, command);
+}
+

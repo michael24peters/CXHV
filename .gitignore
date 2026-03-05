@@ -1,0 +1,17 @@
+# WinCC / DCS runtime junk
+db/
+data/OnlineBackup/
+log/
+
+# SQLite
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# InfluxDB
+*.wal
+*.tsm
+
+# Editor / temp
+*~
+

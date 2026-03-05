@@ -1,0 +1,62 @@
+#uses "FwFSMConfDB_HV.ctl"
+CODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV_ALT_ConfDB");
+   if(!globalExists("FwFSMConfDB_HV_CurrDUActions"))
+   {
+      addGlobal("FwFSMConfDB_HV_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwFSMConfDB_HV",FwFSMConfDB_HV_CurrDUActions);
+   }
+   FwFSMConfDB_HV_initialize("CODEXB_HV_ALT", devdp);
+   fwDU_setDefaultParameters("CODEXB_HV_ALT", devdp);
+   if(dpConnect("cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_doCommand",false,
+     "CODEXB_HV_ALT|CODEXB_HV_ALT_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_HV_ALT CODEXB_HV_ALT_ConfDB");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV_ALT_ConfDB");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_valueChanged",
+      devdp+".status:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_doCommand",
+     "CODEXB_HV_ALT|CODEXB_HV_ALT_ConfDB.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_valueChanged(
+      string dp1, int x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV_ALT_ConfDB");
+   fwDU_convertValue("CODEXB_HV_ALT","CODEXB_HV_ALT_ConfDB");
+   FwFSMConfDB_HV_valueChanged("CODEXB_HV_ALT", devdp,
+      x1, state );
+   fwDU_setState("CODEXB_HV_ALT", devdp, state);
+}
+
+cbCODEXB_HV_ALT_CODEXB_HV_ALT_ConfDB_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("CODEXB_HV_ALT_ConfDB");
+   command = fwDU_convertCommand("CODEXB_HV_ALT","CODEXB_HV_ALT_ConfDB","FwFSMConfDB_HV", FwFSMConfDB_HV_CurrDUActions, command);
+   FwFSMConfDB_HV_doCommand("CODEXB_HV_ALT", devdp, command);
+}
+
