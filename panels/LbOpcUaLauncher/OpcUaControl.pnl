@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel version="14">
+ <properties>
+  <prop name="Name">
+   <prop name="en_US.utf8"></prop>
+   <prop name="en_US.iso88591"></prop>
+  </prop>
+  <prop name="Size">522 438</prop>
+  <prop name="BackColor">_3DFace</prop>
+  <prop name="RefPoint">110 52</prop>
+  <prop name="InitAndTermRef">True</prop>
+  <prop name="SendClick">False</prop>
+  <prop name="RefFileName"></prop>
+  <prop name="DPI">96.13660377358489</prop>
+  <prop name="PDPI">96.13660377358489</prop>
+  <prop name="layoutType">None</prop>
+ </properties>
+ <events>
+  <script name="ScopeLib" isEscaped="1"><![CDATA[string SelDPName;]]></script>
+ </events>
+ <shapes>
+  <shape Name="TEXT_FIELD1" shapeType="TEXT_FIELD" layerId="0">
+   <properties>
+    <prop name="serialId">1</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">49.75 47</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_WindowText</prop>
+    <prop name="BackColor">_Window</prop>
+    <prop name="TabOrder">0</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+     <prop name="en_US.iso88591"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignNone</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+     <prop name="en_US.iso88591">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">49.75 35</prop>
+    <prop name="Size">391 41</prop>
+    <prop name="BorderStyle">Normal</prop>
+    <prop name="Editable">True</prop>
+    <prop name="ClearButtonEnabled">False</prop>
+    <prop name="TextFormat">[0s,,,AlignHCenter]</prop>
+    <prop name="ulcClientSideWidget">False</prop>
+   </properties>
+   <events>
+    <script name="Initialize" isEscaped="1"><![CDATA[main()
+{
+  this.text =&quot;OPCUa Server Control on system &quot;+getSystemName();
+}]]></script>
+   </events>
+  </shape>
+  <shape Name="TABLE1" shapeType="TABLE" layerId="0">
+   <properties>
+    <prop name="serialId">3</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">29.99999999999999 120</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_WindowText</prop>
+    <prop name="BackColor">_Window</prop>
+    <prop name="TabOrder">2</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+     <prop name="en_US.iso88591"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignNone</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+     <prop name="en_US.iso88591">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">29.99999999999999 120</prop>
+    <prop name="Size">241 111</prop>
+    <prop name="ShowColumnHeader">True</prop>
+    <prop name="ShowRowHeader">False</prop>
+    <prop name="SortOnClick">True</prop>
+    <prop name="RowHeight">15</prop>
+    <prop name="RowHeaderWidth">0</prop>
+    <prop name="GridType">Cross</prop>
+    <prop name="VScrollBarMode">Auto</prop>
+    <prop name="HScrollBarMode">Auto</prop>
+    <prop name="Column">
+     <prop name="Name">OPCServer</prop>
+     <prop name="Width">240</prop>
+     <prop name="Visible">True</prop>
+     <prop name="Editable">False</prop>
+     <prop name="Label">
+      <prop name="en_US.utf8">OPCServer</prop>
+      <prop name="en_US.iso88591">OPCServer</prop>
+     </prop>
+     <prop name="ToolTipText">
+      <prop name="en_US.utf8"></prop>
+      <prop name="en_US.iso88591"></prop>
+     </prop>
+    </prop>
+    <prop name="Column">
+     <prop name="Name">DataPoint</prop>
+     <prop name="Width">240</prop>
+     <prop name="Visible">False</prop>
+     <prop name="Editable">False</prop>
+     <prop name="Label">
+      <prop name="en_US.utf8">DataPoint</prop>
+      <prop name="en_US.iso88591">DataPoint</prop>
+     </prop>
+     <prop name="ToolTipText">
+      <prop name="en_US.utf8"></prop>
+      <prop name="en_US.iso88591"></prop>
+     </prop>
+    </prop>
+   </properties>
+   <events>
+    <script name="Clicked" isEscaped="1"><![CDATA[main(int row, string column, string value)
+{
+  string dpn = this.cellValueRC(row,&quot;DataPoint&quot;);
+  SelDPName = dpn;
+  DebugTN(row,column,dpn);
+}]]></script>
+    <script name="Initialize" isEscaped="1"><![CDATA[main()
+{
+  dyn_string dps = dpNames(&quot;*&quot;,&quot;LbOPCUAServers&quot;);
+  for (int i=1;i&lt;=dynlen(dps);i++)
+  {
+    string srv = strsplit(dps[i],&quot;:&quot;)[2];
+    this.appendLine(&quot;OPCServer&quot;,srv, &quot;DataPoint&quot;,dps[i]);
+  }
+}]]></script>
+   </events>
+  </shape>
+  <shape Name="COMBO_BOX1" shapeType="COMBO_BOX" layerId="0">
+   <properties>
+    <prop name="serialId">4</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">30 274</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_WindowText</prop>
+    <prop name="BackColor">_Window</prop>
+    <prop name="TabOrder">3</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+     <prop name="en_US.iso88591"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignNone</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+     <prop name="en_US.iso88591">Sans Serif,-1,15,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">30 272</prop>
+    <prop name="Size">211 21</prop>
+    <prop name="Listitems">
+     <prop name="Item">
+      <prop name="Text">
+       <prop name="en_US.utf8">Stop Selected Server</prop>
+       <prop name="en_US.iso88591">Stop Selected Server</prop>
+      </prop>
+      <prop name="Select">False</prop>
+     </prop>
+     <prop name="Item">
+      <prop name="Text">
+       <prop name="en_US.utf8">Restart Selected Server</prop>
+       <prop name="en_US.iso88591">Restart Selected Server</prop>
+      </prop>
+      <prop name="Select">False</prop>
+     </prop>
+     <prop name="Item">
+      <prop name="Text">
+       <prop name="en_US.utf8">Start Selected Server</prop>
+       <prop name="en_US.iso88591">Start Selected Server</prop>
+      </prop>
+      <prop name="Select">False</prop>
+     </prop>
+    </prop>
+    <prop name="Editable">True</prop>
+   </properties>
+   <events>
+    <script name="Changed" isEscaped="1"><![CDATA[main()
+{
+  if (SelDPName != &quot;&quot;)
+  {
+    DebugTN(SelDPName,this.selectedText(),this.selectedPos());
+    TABLE1.deleteSelection();
+    dpSetWait(SelDPName+&quot;.Command&quot;,this.selectedPos());
+    SelDPName=&quot;&quot;;
+  }
+}]]></script>
+   </events>
+  </shape>
+ </shapes>
+</panel>
