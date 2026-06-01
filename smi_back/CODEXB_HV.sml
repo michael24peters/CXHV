@@ -452,18 +452,18 @@ class: LEFT_GROUNDFwCaenChannelA1580Default_CLASS/associated
     !color: FwStateAttention3
         action: Clear_Emergency	!visible: 1
 
+object: CAEN:cxcaen01:board08:channel000 is_of_class LEFT_GROUNDFwCaenChannelA1580Default_CLASS
+
 object: CAEN:cxcaen01:board08:channel001 is_of_class LEFT_GROUNDFwCaenChannelA1580Default_CLASS
 
 object: CAEN:cxcaen01:board08:channel002 is_of_class LEFT_GROUNDFwCaenChannelA1580Default_CLASS
 
-object: CAEN:cxcaen01:board08:channel000 is_of_class LEFT_GROUNDFwCaenChannelA1580Default_CLASS
-
-objectset: LEFT_GROUNDFWCAENCHANNELA1580DEFAULT_FWSETSTATES is_of_class VOID {CAEN:cxcaen01:board08:channel001,
-	CAEN:cxcaen01:board08:channel002,
-	CAEN:cxcaen01:board08:channel000 }
-objectset: LEFT_GROUNDFWCAENCHANNELA1580DEFAULT_FWSETACTIONS is_of_class VOID {CAEN:cxcaen01:board08:channel001,
-	CAEN:cxcaen01:board08:channel002,
-	CAEN:cxcaen01:board08:channel000 }
+objectset: LEFT_GROUNDFWCAENCHANNELA1580DEFAULT_FWSETSTATES is_of_class VOID {CAEN:cxcaen01:board08:channel000,
+	CAEN:cxcaen01:board08:channel001,
+	CAEN:cxcaen01:board08:channel002 }
+objectset: LEFT_GROUNDFWCAENCHANNELA1580DEFAULT_FWSETACTIONS is_of_class VOID {CAEN:cxcaen01:board08:channel000,
+	CAEN:cxcaen01:board08:channel001,
+	CAEN:cxcaen01:board08:channel002 }
 
 
 objectset: LEFT_GROUNDFWCHILDREN_FWSETACTIONS union {LEFT_GROUNDFWCAENCHANNELA1580DEFAULT_FWSETACTIONS } is_of_class VOID

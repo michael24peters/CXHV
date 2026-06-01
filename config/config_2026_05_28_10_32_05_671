@@ -1,11 +1,4 @@
 [general]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-# useRDBArchive required from 3.19 P007 in order to perform direct RDB queries
-useRDBArchive = 1
-#----------- end NextGenArchiverOracle -------------------------
-#--------- begin fwNextGenArchiver    - Do not edit it manually
-useNGA = 1
-#----------- end fwNextGenArchiver    -------------------------
 pvss_path = "/opt/WinCC_OA/3.19"
 proj_path = "/group/cx/wincc319/fwComponents_CXHV"
 proj_path = "/group/online/ecs/PVSSShortcutProjects319/GlobalProject"
@@ -24,9 +17,6 @@ eventPort = 14012
 [dist]
 distPort = 14017
 [ui]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-queryRDBdirect = 1
-#----------- end NextGenArchiverOracle -------------------------
 #--------- begin lbFsmDomains         - Do not edit it manually
 LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
 #----------- end lbFsmDomains         -------------------------
@@ -80,9 +70,6 @@ activeIconTheme = ""
 LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"
 defaultPanelFormat = "XML"
 [ctrl]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-queryRDBdirect = 1
-#----------- end NextGenArchiverOracle -------------------------
 #--------- begin lbFsmDomains         - Do not edit it manually
 LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
 #----------- end lbFsmDomains         -------------------------
@@ -154,60 +141,3 @@ smoothBit = "Userbit 32"
 #--------- begin fwFSM                - Do not edit it manually
 LoadCtrlLibs = "fwFSM/fwFsmEvent.ctl"
 #----------- end fwFSM                -------------------------
-[NextGenArch]
-#--------- begin fwNextGenArchiver    - Do not edit it manually
-UseOriginalValue = 1
-#FWCORE-3242 for the NGA: archiving overrides smoothing on bit change
-smoothBit = "_active"
-smoothBit = "_exp_default"
-smoothBit = "_aut_default"
-smoothBit = "_out_prange"
-smoothBit = "_out_range"
-smoothBit = "_exp_inv"
-smoothBit = "_aut_inv"
-smoothBit = "_online_bad"
-### We should not take into account _online_bad : it is always set for DPEs that have no "default" config
-### which is the vast majority of our cases.
-#smoothBit = "_default_bad"
-### Note that we keep values queried through General Query or Single Query, as they were executed
-### usually after a restart of a driver, or due to some explicit debugging action
-smoothBit = "_from_GI"
-smoothBit = "_from_SI"
-### Simillarly for periphery-active, which means that interface driver is active
-smoothBit = "_per_active"
-### And for poll-on-use addresses (for drivers that support it), if not currently polled
-smoothBit = "_uncertain"
-smoothBit = "_stime_inv"
-smoothBit = "Userbit 1"
-smoothBit = "Userbit 2"
-smoothBit = "Userbit 3"
-smoothBit = "Userbit 4"
-smoothBit = "Userbit 5"
-smoothBit = "Userbit 6"
-smoothBit = "Userbit 7"
-smoothBit = "Userbit 8"
-smoothBit = "Userbit 9"
-smoothBit = "Userbit 10"
-smoothBit = "Userbit 11"
-smoothBit = "Userbit 12"
-smoothBit = "Userbit 13"
-smoothBit = "Userbit 14"
-smoothBit = "Userbit 15"
-smoothBit = "Userbit 16"
-smoothBit = "Userbit 17"
-smoothBit = "Userbit 18"
-smoothBit = "Userbit 19"
-smoothBit = "Userbit 20"
-smoothBit = "Userbit 21"
-smoothBit = "Userbit 22"
-smoothBit = "Userbit 23"
-smoothBit = "Userbit 24"
-smoothBit = "Userbit 25"
-smoothBit = "Userbit 26"
-smoothBit = "Userbit 27"
-smoothBit = "Userbit 28"
-smoothBit = "Userbit 29"
-smoothBit = "Userbit 30"
-smoothBit = "Userbit 31"
-smoothBit = "Userbit 32"
-#----------- end fwNextGenArchiver    -------------------------

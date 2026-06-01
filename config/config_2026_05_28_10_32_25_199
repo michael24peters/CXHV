@@ -1,8 +1,4 @@
 [general]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-# useRDBArchive required from 3.19 P007 in order to perform direct RDB queries
-useRDBArchive = 1
-#----------- end NextGenArchiverOracle -------------------------
 #--------- begin fwNextGenArchiver    - Do not edit it manually
 useNGA = 1
 #----------- end fwNextGenArchiver    -------------------------
@@ -24,9 +20,6 @@ eventPort = 14012
 [dist]
 distPort = 14017
 [ui]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-queryRDBdirect = 1
-#----------- end NextGenArchiverOracle -------------------------
 #--------- begin lbFsmDomains         - Do not edit it manually
 LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
 #----------- end lbFsmDomains         -------------------------
@@ -80,9 +73,6 @@ activeIconTheme = ""
 LoadCtrlLibs = "fwInstallation/fwInstallation.ctl"
 defaultPanelFormat = "XML"
 [ctrl]
-#--------- begin NextGenArchiverOracle - Do not edit it manually
-queryRDBdirect = 1
-#----------- end NextGenArchiverOracle -------------------------
 #--------- begin lbFsmDomains         - Do not edit it manually
 LoadCtrlLibs = "lbFSMConfDB/lbFSMConfDB.ctl"
 #----------- end lbFsmDomains         -------------------------

@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel version="14">
+ <properties>
+  <prop name="Name">
+   <prop name="en_US.utf8"></prop>
+  </prop>
+  <prop name="Size">345 518</prop>
+  <prop name="BackColor">_3DFace</prop>
+  <prop name="RefPoint">0 0</prop>
+  <prop name="InitAndTermRef">True</prop>
+  <prop name="SendClick">False</prop>
+  <prop name="RefFileName"></prop>
+  <prop name="DPI">96</prop>
+  <prop name="PDPI">96</prop>
+  <prop name="layoutType">None</prop>
+ </properties>
+ <events>
+  <script name="ScopeLib" isEscaped="1"><![CDATA[#uses &quot;lbTrending/lbTrending.ctl&quot;
+//#uses &quot;lbWeb/lbWeb.ctl&quot;
+
+mapping IdList;
+mapping TypeIdList;
+int InternalDpState = 0;
+
+int PLOT_ELEMENTS = 1;
+int PLOT_DPS = 2;
+int PLOT_SINGLE = 3;
+int PLOT_ALL = 4;
+
+treeInit()
+{
+
+  myTree.addColumn(&quot;Column One&quot;);
+  myTree.addColumn(&quot;Column Two&quot;);
+  myTree.showHeader(FALSE);
+  myTree.selectionMode(&quot;Extended&quot;);
+
+  treeRefresh();
+}
+
+treeRefresh(int internal = 0)
+{
+  dyn_string syss, types, dpels;
+  int i, j;
+  string dp;
+
+  myTree.clear();
+  InternalDpState = internal;
+  syss =  getSystems();
+  dynSortAsc(syss);
+  for(i = 1; i &lt;= dynlen(syss); i++)
+  {
+    syss[i] += &quot;:&quot;;
+    myTree.appendItem(&quot;&quot;, syss[i], syss[i]);
+    myTree.appendItem(syss[i], syss[i]+&quot;_Template&quot;, &quot;Template&quot;);
+  }
+}
+
+treeClicked(string id, int column)
+{
+  if(column != 1)
+    return;
+  if(!IdList[id])
+  {
+    IdList[id] = 1;
+    myTree.setIcon(id,1, &quot;16_ack_check_green_border.gif&quot;);
+  }
+  else
+  {
+    IdList[id] = 0;
+    myTree.setIcon(id,1, &quot;16_ack_check_border1.gif&quot;);
+  }
+}
+
+treeRightClicked(string id, int column)
+{
+  dyn_string items;
+
+  if($1 == &quot;Trending&quot;)
+  {
+    trendingRightClick(id);
+    return;
+  }
+  items = strsplit(id,&quot;:.&quot;);
+  if(dynlen(items) &gt; 2)
+    return;
+//  if($1 == &quot;Trending&quot;)
+//    trendingRightClick(id);
+//  else
+    webRightClick(id);
+}
+
+mapping TypeStructs;
+
+expandOneLevel(string type, string id)
+{
+  int i, j;
+  dyn_dyn_string partDef;
+  dyn_string dpels, types;
+  dyn_string parts, items, ids;
+  string newid, topid;
+  int child_done = 0;
+
+  if(mappingHasKey(TypeIdList,type))
+    ids = TypeIdList[type];
+  partDef = TypeStructs[type];
+  dpels = partDef[1];
+  types = partDef[2];
+  items = strsplit(id,&quot;.&quot;);
+    for(i = 1; i &lt;= dynlen(dpels); i++)
+    {
+      if(!(strpos(dpels[i],id+&quot;.&quot;) == 0))
+        continue;
+      if(dpels[i] == id)
+        continue;
+      parts = strsplit(dpels[i],&quot;.&quot;);
+      if(dynlen(parts) != (dynlen(items) + 1))
+      {
+        if(child_done)
+          continue;
+        else
+          child_done++;
+      }
+      else
+        child_done = 0;
+      newid = id;
+      topid = id;
+//DebugN(&quot;test&quot;, id, dynlen(items), dpels[i]);
+      for(j = (dynlen(items) + 1); j &lt;= dynlen(parts); j++)
+      {
+        newid = newid+&quot;.&quot;+parts[j];
+        if(!myTree.itemExists(newid))
+        {
+          myTree.appendItem(topid,newid,&quot;.&quot;+parts[j]);
+          myTree.setIcon(newid,0,types[i]);
+//          if(j == dynlen(parts))
+          if(types[i]!= &quot;dptree/struct.png&quot;)
+          {
+            IdList[newid] = 0;
+            dynAppend(ids, newid);
+            TypeIdList[type] = ids;
+            myTree.setIcon(newid,1, &quot;16_ack_check_border1.gif&quot;);
+          }
+//          DebugN(&quot;Appending&quot;, topid, newid, &quot;.&quot;+parts[j], types[i]);
+        }
+        topid = newid;
+      }
+    }
+}
+
+treeExpanded(string id)
+{
+  dyn_string items, dpels, types, parts, dps, ids, elitems;
+  string dpType, sys, newid, topid, pattern, dp, type;
+  int i, j;
+  mapping typeStruct;
+  dyn_dyn_string partDef;
+
+//  DebugN(&quot;expanded&quot;, id);
+
+  items = strsplit(id,&quot;:.&quot;);
+
+
+  if(dynlen(items) == 1)
+  {
+    if(myTree.itemExists(id+&quot;_Template&quot;))
+      myTree.removeItem(id+&quot;_Template&quot;);
+    sys = id;
+    types = getDpTypes(sys, InternalDpState);
+    for(j = 1; j &lt;= dynlen(types); j++)
+    {
+      if(!myTree.itemExists(sys+types[j]))
+      {
+        myTree.appendItem(sys, sys+types[j], types[j]);
+        dp = getDpTypeDp(types[j], sys);
+        if(dp != &quot;&quot;)
+        {
+          if(!myTree.itemExists(sys+types[j]+&quot;_Template&quot;))
+          {
+            myTree.appendItem(sys+types[j], sys+types[j]+&quot;_Template&quot;, &quot;Template&quot;);
+          }
+        }
+      }
+    }
+  }
+  else if(dynlen(items) == 2)
+  {
+    if(myTree.itemExists(id+&quot;_Template&quot;))
+      myTree.removeItem(id+&quot;_Template&quot;);
+    dpType = items[2];
+    sys = items[1]+&quot;:&quot;;
+    getDpTypeStruct(dpType, sys, dpels, types);
+    elitems = strsplit(dpels[1],&quot;:.&quot;);
+    dp = elitems[1];
+    for(i = 1; i &lt;= dynlen(dpels); i++)
+    {
+      strreplace(dpels[i], dp, id);
+    }
+    partDef[1] = dpels;
+    partDef[2] = types;
+    TypeStructs[id] = partDef;
+//DebugN(dpels, types);
+    expandOneLevel(id, id);
+
+/*
+    for(i = 1; i &lt;= dynlen(dpels); i++)
+    {
+      parts = strsplit(dpels[i],&quot;.&quot;);
+      newid = id;
+      topid = id;
+      for(j = 2; j &lt;= dynlen(parts); j++)
+      {
+        newid = newid+&quot;.&quot;+parts[j];
+        if(!myTree.itemExists(newid))
+        {
+          myTree.appendItem(topid,newid,&quot;.&quot;+parts[j]);
+          if(j == dynlen(parts))
+          {
+            IdList[newid] = 0;
+            dynAppend(ids, newid);
+            TypeIdList[id] = ids;
+            myTree.setIcon(newid,1, &quot;16_ack_check_border1.gif&quot;);
+          }
+          DebugN(&quot;Appending&quot;, topid, newid, &quot;.&quot;+parts[j]);
+        }
+        topid = newid;
+      }
+    }
+*/
+    if(sys != &quot;&quot;)
+      pattern = sys;
+    pattern += &quot;*&quot;;
+    dps = dpNames(pattern, dpType);
+    for(i = 1; i &lt;= dynlen(dps); i++)
+    {
+      dp = dpSubStr(dps[i],DPSUB_DP);
+      if(!myTree.itemExists(sys+dp))
+      {
+        myTree.appendItem(id,sys+dp, dp);
+        myTree.setIcon(sys+dp,0,&quot;dptree/dptype.png&quot;);
+//        DebugN(&quot;Appending&quot;, id,sys+dp, dp);
+      }
+      else if(id == sys+dp)
+      {
+//DebugN(&quot;Node already exists&quot;, id, &quot;&amp;&quot;+sys+dp, dp);
+        myTree.appendItem(id,&quot;&amp;&quot;+sys+dp, dp);
+        myTree.setIcon(&quot;&amp;&quot;+sys+dp,0,&quot;dptree/dptype.png&quot;);
+      }
+    }
+  }
+  else if(dynlen(items) &gt; 2)
+  {
+    elitems = strsplit(id,&quot;:.&quot;);
+    type = elitems[1]+&quot;:&quot;+elitems[2];
+    expandOneLevel(type, id);
+  }
+}
+
+dyn_string getSystems()
+{
+  dyn_string names;
+  dyn_uint uids;
+
+  getSystemNames(names, uids);
+  return names;
+}
+
+dyn_string getDpTypes(string sys = &quot;&quot;, int internalDps = 0)
+{
+  dyn_string types, int_types;
+  int id, i;
+
+  if(sys == &quot;&quot;)
+    sys = getSystemName();
+  id = getSystemId(sys);
+  types = dpTypes(&quot;*&quot;, id);
+  for(i = 1; i &lt;= dynlen(types); i++)
+  {
+    if(strpos(types[i],&quot;_&quot;) == 0)
+    {
+      dynAppend(int_types, types[i]);
+      dynRemove(types,i);
+      i--;
+    }
+  }
+  if(internalDps)
+  {
+    dynAppend(int_types, types);
+    return int_types;
+  }
+  return types;
+}
+
+string getDpTypeDp(string dpType, string sys = &quot;&quot;)
+{
+  dyn_string dps;
+  string pattern;
+  dyn_string dpels, dimtypes;
+  string dp;
+  int i, found = 0;
+
+  if(sys != &quot;&quot;)
+    pattern = sys;
+  pattern += &quot;*&quot;;
+  dps = dpNames(pattern, dpType);
+  for(i = 1; i &lt;= dynlen(dps); i++)
+  {
+    dp = dpSubStr(dps[i], DPSUB_DP);
+//    if(strpos(dp,&quot;_&quot;) != 0)
+////      found = 0;
+////    else
+//    {
+      found = 1;
+      break;
+//    }
+  }
+  if(found)
+  {
+//    DebugN(&quot;found&quot;, dp);
+    return(dp);
+  }
+  return(&quot;&quot;);
+}
+
+dyn_string getDpTypeStruct(string dpType, string sys = &quot;&quot;, dyn_string &amp;dpels, dyn_string &amp;types)
+{
+  string dp;
+
+  dynClear(dpels);
+  dp = getDpTypeDp(dpType, sys);
+//DebugN(&quot;getDpTypeDp&quot;,dpType, sys, dp);
+  if(dp != &quot;&quot;)
+  {
+    get_structure(sys+dp, dpels, types);
+//    DebugN(dpType, sys, dp, dpels, types);
+  }
+//  else
+//    DebugN(dpType, sys);
+}
+
+get_structure(string dp, dyn_string &amp;dpels, dyn_string &amp;dimtypes)
+{
+  int i;
+  string sys;
+
+  dpels = dpNames(dp+&quot;.**&quot;);
+  sys = dpSubStr(dp, DPSUB_SYS);
+  for(i = 1; i &lt;= dynlen(dpels); i++)
+  {
+    dimtypes[i] = getDimDpType(dpElementType(dpels[i]));
+    strreplace(dpels[i], sys, &quot;&quot;);
+  }
+}
+/*
+get_structure(string dp, dyn_string &amp;dpels, dyn_string &amp;dimtypes)
+{
+string dpt, sys;
+dyn_string items, dps;
+int struc;
+dyn_string list_items, list_types;
+dyn_string ldpels, ldimtypes;
+int i;
+
+	dps = strsplit(dp,&quot;;&quot;);
+	for(i = 1; i &lt;= dynlen(dps); i++)
+	{
+		dp = dps[i];
+DebugN(&quot;Getting type name&quot;, dp);
+		dpt= dpTypeName ( dp );
+		items = strsplit(dp,&quot;.&quot;);
+   dynClear(list_items);
+   dynClear(list_types);
+   sys = dpSubStr(dp,DPSUB_SYS);
+DebugN(sys,sys+dpt);
+		get_type_info( sys+dpt, list_items, list_types, items[1]);
+		find_struct(dp, list_items, list_types, ldpels, ldimtypes);
+		dynAppend(dpels, ldpels);
+		dynAppend(dimtypes, ldimtypes);
+	}
+}
+*/
+find_struct(string dp, dyn_string list_items, dyn_string list_types,
+	dyn_string &amp;dpels, dyn_string &amp;dimtypes)
+{
+int i;
+
+	dynClear(dpels);
+	dynClear(dimtypes);
+	for(i = 1; i &lt;= dynlen(list_items); i++)
+	{
+		if(strpos(list_items[i],dp) == 0)
+		{
+			dynAppend(dpels, list_items[i]);
+			dynAppend(dimtypes, list_types[i]);
+		}
+	}
+}
+
+
+get_type_info( string dpt, dyn_string &amp;list_items, dyn_string &amp;list_types,
+	string &amp;prefix)
+{
+dyn_dyn_string lnames;
+dyn_dyn_int ltypes;
+int struc, i, j, k;
+string ldpt, str, dimtype;
+dyn_string items;
+
+	struc=dpTypeGet(dpt,lnames,ltypes);
+//DebugN(dpt, lnames, ltypes, struc);
+	for(i = 2; i &lt;= dynlen(ltypes); i++)
+	{
+		for(j = 1; j &lt;= dynlen(ltypes[i]); j++)
+		{
+			if(ltypes[i][j] != 0)
+			{
+				str = prefix;
+				items[j] = lnames[i][j];
+				for(k = 2; k &lt;= j; k++)
+				{
+					str += &quot;.&quot;;
+					str += items[k];
+				}
+//				if(	(ltypes[i][j] != DPEL_TYPEREF)/* &amp;&amp; (ltypes[i][j] != DPEL_STRUCT)*/)
+//				{
+					dimtype = getDimDpType(ltypes[i][j]);
+					dynAppend(list_items, str);
+					dynAppend(list_types, dimtype);
+//				}
+				if(ltypes[i][j] == DPEL_TYPEREF)
+				{
+					ldpt = lnames[i][j+1];
+					get_type_info(ldpt, list_items, list_types, str);
+				}
+				break;
+			}
+		}
+	}
+}
+
+
+string getDimDpType(int elTyp)
+{
+string type;
+
+	switch(elTyp)
+	{
+		case DPEL_STRING:
+			type = &quot;dptree/text.png&quot;;
+			break;
+		case DPEL_UINT:
+			type = &quot;dptree/uint.png&quot;;
+			break;
+		case DPEL_INT:
+			type = &quot;dptree/int.png&quot;;
+			break;
+		case DPEL_FLOAT:
+			type = &quot;dptree/float.png&quot;;
+			break;
+		case DPEL_DYN_UINT:
+			type = &quot;dptree/uintarray.png&quot;;
+			break;
+		case DPEL_DYN_INT:
+			type = &quot;dptree/intarray.png&quot;;
+			break;
+		case DPEL_DYN_FLOAT:
+			type = &quot;dptree/floatarray.png&quot;;
+			break;
+		case DPEL_DYN_STRING:
+			type = &quot;dptree/textarray.png&quot;;
+			break;
+		case DPEL_BOOL:
+			type = &quot;dptree/bit.png&quot;;
+			break;
+		case DPEL_DYN_BOOL:
+			type = &quot;dptree/bitarray.png&quot;;
+			break;
+		case DPEL_BIT32:
+			type = &quot;dptree/32bit.png&quot;;
+			break;
+		case DPEL_DYN_BIT32:
+			type = &quot;dptree/32bitarray.png&quot;;
+			break;
+		case DPEL_CHAR:
+			type = &quot;dptree/char.png&quot;;
+			break;
+//		case DPELEMENT_BLOB:
+//		case DPELEMENT_DYNBLOB:
+		case DPEL_DYN_CHAR:
+			type = &quot;dptree/chararray.png&quot;;
+			break;
+		case DPEL_TIME:
+			type = &quot;dptree/time.png&quot;;
+     break;
+		case DPEL_DYN_TIME:
+			type = &quot;dptree/timearray.png&quot;;
+     break;
+//		case DPEL_TYPEREF:
+//			dimType = &quot;RecurseType&quot;;
+//			break;
+		case DPEL_TYPEREF:
+		case DPEL_STRUCT:
+/*
+		case DPELEMENT_ARRAY:
+		case DPELEMENT_CHARARRAY:
+		case DPELEMENT_UINTARRAY:
+		case DPELEMENT_INTARRAY:
+		case DPELEMENT_FLOATARRAY:
+		case DPELEMENT_BITARRAY:
+		case DPELEMENT_32BITARRAY:
+		case DPELEMENT_TEXTARRAY:
+*/
+			type = &quot;dptree/struct.png&quot;;
+			break;
+		default:
+//			type = DIM_NOT_SUPPORTED;
+			type = &quot;&quot;;
+			break;
+	}
+	return(type);
+}
+
+int getSelectedCurves(dyn_string dps, dyn_string types, dyn_dyn_string &amp;curvesInPlots, int grouping)
+{
+  int i, j, index;
+  string dpe;
+  dyn_dyn_string typeIds;
+  dyn_int indexes;
+  int ndps = 0;
+
+  if(grouping &gt; 10)
+  {
+    ndps = grouping - 10;
+    grouping = PLOT_DPS;
+  }
+
+  dynClear(curvesInPlots);
+  index = 1;
+  for(i = 1; i &lt;= dynlen(dps); i++)
+  {
+    if(grouping == PLOT_ELEMENTS)
+      curvesInPlots[i] = makeDynString();
+    else if(grouping == PLOT_DPS)
+    {
+//      curvesInPlots[i] = makeDynString();
+    }
+    else if(grouping == PLOT_SINGLE)
+    {
+//      curvesInPlots[i] = makeDynString();
+    }
+    else if(grouping == PLOT_ALL)
+    {
+      if(i == 1)
+        curvesInPlots[1] = makeDynString();
+    }
+    typeIds[i] = TypeIdList[types[i]];
+    for(j = 1; j &lt;= dynlen(typeIds[i]); j++)
+    {
+      if(IdList[typeIds[i][j]] == 1)
+      {
+        if(grouping == PLOT_DPS)
+        {
+          if(((i-1) % ndps) == 0)
+          {
+            indexes[j] = index;
+            curvesInPlots[index] = makeDynString();
+            index++;
+          }
+DebugN(i, j, ndps, i%ndps, (i-1) % ndps, indexes);
+        }
+        dpe = typeIds[i][j];
+        strreplace(dpe,types[i],dps[i]);
+       if(grouping == PLOT_ELEMENTS)
+        {
+          dynAppend(curvesInPlots[i], dpe);
+        }
+        else if(grouping == PLOT_DPS)
+        {
+          dynAppend(curvesInPlots[indexes[j]], dpe);
+        }
+        else if(grouping == PLOT_SINGLE)
+        {
+          curvesInPlots[index] = makeDynString();
+          dynAppend(curvesInPlots[index], dpe);
+          index++;
+        }
+        else if(grouping == PLOT_ALL)
+        {
+          dynAppend(curvesInPlots[1], dpe);
+        }
+      }
+    }
+  }
+}
+
+dyn_string getSelectedDps()
+{
+  dyn_string dps;
+
+  dps = myTree.selectedItems();
+// for some reason in WinCC-OA 3.11 selected items are duplicated
+  dynUnique(dps);
+  return dps;
+}
+
+webRightClick(string id)
+{
+  dyn_string txt, items, dps, types;
+  int answer, i;
+  dyn_dyn_string curvesInPlots;
+  string type;
+  int isTypeDp = 0, isType = 0, sysid;
+  dyn_string dptypes;
+
+//DebugN(&quot;rigthClicked&quot;, id);
+  if(id[0] == &quot;&amp;&quot;)
+  {
+    isTypeDp = 1;
+    id = substr(id, 1);
+//DebugN(id);
+  }
+  else
+  {
+    items = strsplit(id,&quot;:&quot;);
+    sysid = getSystemId(items[1]+&quot;:&quot;);
+    dptypes = dpTypes(items[2],sysid);
+//DebugN(items, sysid, dptypes);
+    if(dynlen(dptypes))
+      isType = 1;
+  }
+  if((!dpExists(id)) || (isType))
+  {
+
+    txt = makeDynString(&quot;PUSH_BUTTON, Publish selected items for all Dps, 1, 1&quot;,
+      &quot;PUSH_BUTTON, Publish selected items for all Dps in ALL Systems, 2, 1&quot;);
+    popupMenu(txt, answer);
+//  DebugN(id, column, answer);
+
+    items = strsplit(id,&quot;:&quot;);
+    type = items[2];
+//DebugN(id, items, type);
+
+    if(answer == 1)
+    {
+      dps = dpNames(items[1]+&quot;:*&quot;,type);
+    }
+    else if(answer == 2)
+    {
+      dps = dpNames(&quot;*:*&quot;,type);
+    }
+    if(answer &gt; 0)
+    {
+
+      for(i = 1; i &lt;= dynlen(dps); i++)
+      {
+        types[i] = id;
+      }
+      getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+      lbWeb_createDpPublications(curvesInPlots[1]);
+
+    }
+    return;
+  }
+  txt = makeDynString(&quot;PUSH_BUTTON, Publish, 1, 1&quot;);
+  popupMenu(txt, answer);
+//  DebugN(id, column, answer);
+  if(answer == 1)
+  {
+//    dps = myTree.selectedItems();
+    dps = getSelectedDps();
+    //DebugN(dps);
+    for(i = 1; i &lt;= dynlen(dps); i++)
+    {
+      types[i] = myTree.parent(dps[i]);
+      if(dps[i][0] == &quot;&amp;&quot;)
+        dps[i] = substr(dps[i], 1);
+    }
+//DebugN(dps);
+    getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+    lbWeb_createDpPublications(curvesInPlots[1]);
+  }
+}
+
+trendingAddOption(dyn_string &amp;txt, int offset, int ndps)
+{
+  int index, i;
+
+  index = offset+PLOT_ELEMENTS;
+  dynAppend(txt,
+    &quot;PUSH_BUTTON, One plot per DP containing all selected elements, &quot;+index+&quot;, 1&quot;);
+//  index = offset+PLOT_DPS;
+//  dynAppend(txt,
+//    &quot;PUSH_BUTTON, One plot per selected element containing all DPs, &quot;+index+&quot;, 1&quot;);
+//  index = offset+PLOT_SINGLE;
+//  dynAppend(txt,
+//    &quot;PUSH_BUTTON, One plot per selected element and per DP, &quot;+index+&quot;, 1&quot;);
+  if(offset == 100)
+    dynAppend(txt,
+      &quot;CASCADE_BUTTON, One plot per selected element containing the DPs..., 1&quot;);
+  else
+    dynAppend(txt,
+      &quot;CASCADE_BUTTON, One plot per selected element containing N DPs..., 1&quot;);
+/*
+  index = offset+10;
+  for(i = 1; i &lt;= 8; i++)
+  {
+    index++;
+    if(ndps &gt; i)
+    {
+      if(i == 1)
+        dynAppend(txt,
+          &quot;PUSH_BUTTON, &quot;+i+&quot; DP per plot, &quot;+index+&quot;, 1&quot;);
+      else
+        dynAppend(txt,
+          &quot;PUSH_BUTTON, &quot;+i+&quot; DPs per plot, &quot;+index+&quot;, 1&quot;);
+    }
+    else
+    {
+      dynAppend(txt,
+        &quot;PUSH_BUTTON, all DPs, &quot;+index+&quot;, 1&quot;);
+      break;
+    }
+  }
+*/
+}
+
+trendingAddNOption(dyn_string &amp;txt, int offset, int ndps)
+{
+  int index, i;
+
+  if(offset == 100)
+    dynAppend(txt,
+      &quot;One plot per selected element containing the DPs...&quot;);
+  else
+    dynAppend(txt,
+      &quot;One plot per selected element containing N DPs...&quot;);
+  index = offset+10;
+  for(i = 1; i &lt;= 8; i++)
+  {
+    index++;
+    if(ndps &gt; i)
+    {
+      if(i == 1)
+        dynAppend(txt,
+          &quot;PUSH_BUTTON, &quot;+i+&quot; DP per plot, &quot;+index+&quot;, 1&quot;);
+      else
+        dynAppend(txt,
+          &quot;PUSH_BUTTON, &quot;+i+&quot; DPs per plot, &quot;+index+&quot;, 1&quot;);
+    }
+    else
+    {
+      dynAppend(txt,
+        &quot;PUSH_BUTTON, all DPs, &quot;+index+&quot;, 1&quot;);
+      break;
+    }
+  }
+}
+
+expandFullTree(string id)
+{
+  dyn_string dps;
+  int i;
+
+//DebugTN(&quot;expanding&quot;, id);
+  treeExpanded(id);
+  dps = myTree.children(id);
+//DebugTN(&quot;children&quot;, id+&quot;.&quot;, dps);
+  for(i = 1; i &lt;= dynlen(dps); i++)
+  {
+      if((strpos(dps[i],id+&quot;.&quot;)) == 0)
+      {
+        expandFullTree(dps[i]);
+      }
+  }
+}
+
+trendingRightClick(string id)
+{
+  dyn_string txt, items, dps, types, keys, dpes, curves;
+  int answer, i, j;
+  string dpType, dpe;
+  dyn_dyn_string typeIds;
+  dyn_dyn_string curvesInPlots;
+
+//DebugTN(&quot;Right Click&quot;, id);
+  items = strsplit(id,&quot;:.&quot;);
+DebugTN(&quot;Right Click&quot;, id, items, dpTypeName(id));
+  if(dynlen(items) &gt; 2)
+  {
+    string type;
+    dyn_dyn_string partDef;
+    dyn_string dpels;
+    int index;
+
+    items = strsplit(id,&quot;.&quot;);
+    type = items[1];
+    partDef = TypeStructs[type];
+    dpels = partDef[1];
+    types = partDef[2];
+//DebugN(id, dpels, types);
+    index = dynContains(dpels, id);
+    if(index &lt;= 0)
+      return;
+    if(types[index] != &quot;dptree/struct.png&quot;)
+      return;
+    txt = makeDynString(&quot;PUSH_BUTTON, Select All Elements..., 401, 1&quot;,
+		                  &quot;PUSH_BUTTON, Deselect All Elements..., 400, 1&quot;);
+    popupMenu(txt, answer);
+    if(answer &gt;= 400)
+    {
+      dyn_string ids;
+      int sel;
+
+      sel = answer - 400;
+      expandFullTree(id);
+//DebugN(id, IdList, TypeIdList);
+      ids = TypeIdList[type];
+      for(i = 1; i &lt;= dynlen(ids); i++)
+      {
+        if(strpos(ids[i],id+&quot;.&quot;) == 0)
+        {
+          IdList[ids[i]] = sel;
+          if(sel)
+            myTree.setIcon(ids[i],1, &quot;16_ack_check_green_border.gif&quot;);
+          else
+            myTree.setIcon(ids[i],1, &quot;16_ack_check_border1.gif&quot;);
+        }
+      }
+//DebugN(id, IdList);
+    }
+    return;
+  }
+  if( (!dpExists(id)) || (dpTypeName(id) == items[2]))
+  {
+    string selFolder;
+
+    dps = myTree.children(id);
+//DebugTN(&quot;Tree children dps&quot;, dps);
+    for(i = 1; i &lt;= dynlen(dps); i++)
+    {
+      if((strpos(dps[i],id+&quot;.&quot;)) == 0)
+      {
+        dynRemove(dps, i);
+        i--;
+      }
+      else
+      {
+        types[i] = id;
+        strreplace(dps[i],&quot;&amp;&quot;,&quot;&quot;);
+      }
+    }
+    txt = makeDynString(&quot;CASCADE_BUTTON, Create Plots and Pages for all DPs..., 1&quot;,
+		                  &quot;SEPARATOR&quot;,
+		                  &quot;PUSH_BUTTON, Archive..., 300, 1&quot;,
+		                  &quot;PUSH_BUTTON, Alarms..., 301, 1&quot;,
+		                  &quot;SEPARATOR&quot;,
+		                  &quot;PUSH_BUTTON, Select All Elements..., 401, 1&quot;,
+		                  &quot;PUSH_BUTTON, Deselect All Elements..., 400, 1&quot;,
+                      &quot;Create Plots and Pages for all DPs...&quot;);
+/*
+//                      &quot;PUSH_BUTTON, All selected elements of each DP in one plot, 2, 1&quot;,
+//                      &quot;PUSH_BUTTON, Same selected element of all DPs in same plot, 3, 1&quot;,
+//                      &quot;PUSH_BUTTON, One selected element of each DP per plot, 4, 1&quot;);
+                      &quot;PUSH_BUTTON, One plot per DP containing all selected elements, 2, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element containing all DPs, 3, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element and per DP, 4, 1&quot;);
+*/
+    trendingAddOption(txt, 100, dynlen(dps));
+    trendingAddNOption(txt, 100, dynlen(dps));
+    popupMenu(txt, answer);
+//DebugN(id, answer);
+    if(answer == 0)
+      return;
+/*
+    dps = myTree.children(id);
+    for(i = 1; i &lt;= dynlen(dps); i++)
+    {
+      if((strpos(dps[i],id+&quot;.&quot;)) == 0)
+      {
+        dynRemove(dps, i);
+        i--;
+      }
+      else
+      {
+        types[i] = id;
+      }
+    }
+*/
+//   getSelectedCurves(dps, types, curvesInPlots, answer - 1);
+//DebugN(curvesInPlots);
+    if(answer &gt;= 400)
+    {
+      dyn_string ids;
+      int sel;
+
+      sel = answer - 400;
+      expandFullTree(id);
+//DebugTN(&quot;select&quot;,id, IdList, TypeIdList);
+      ids = TypeIdList[id];
+      for(i = 1; i &lt;= dynlen(ids); i++)
+      {
+        IdList[ids[i]] = sel;
+        if(sel)
+          myTree.setIcon(ids[i],1, &quot;16_ack_check_green_border.gif&quot;);
+        else
+          myTree.setIcon(ids[i],1, &quot;16_ack_check_border1.gif&quot;);
+      }
+//DebugTN(&quot;select1&quot;,ids);
+    }
+    else if(answer == 300)
+    {
+      getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+ //DebugTN(&quot;archive&quot;, dps, types, curvesInPlots, PLOT_ALL);
+     lbTrending_archive(curvesInPlots[1]);
+    }
+    else if(answer == 301)
+    {
+//DebugN(dps);
+      getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+      lbTrending_alarms(curvesInPlots[1]);
+    }
+    else
+    {
+      selFolder = lbTrending_getSelectedFolder();
+      if(selFolder == &quot;&quot;)
+      {
+        fwUi_informUser(&quot;Please select a folder in the Trend Tree&quot;, 100, 100, &quot;Ok&quot;);
+        DebugTN(&quot;Please select a folder&quot;);
+        return;
+      }
+     getSelectedCurves(dps, types, curvesInPlots, answer - 100);
+     lbTrending_createPagesAndPlots(curvesInPlots, selFolder);
+    }
+   return;
+  }
+//  dps = myTree.selectedItems();
+  dps = getSelectedDps();
+//DebugTN(&quot;Selected items&quot;, dps);
+  txt = makeDynString(&quot;PUSH_BUTTON, Add to Plot, 1, 1&quot;,
+                      &quot;CASCADE_BUTTON, Add to Page selected DPs..., 1&quot;,
+//                      &quot;PUSH_BUTTON, Add to Page, 2, 1&quot;,
+//                      &quot;PUSH_BUTTON, Create &amp;&amp; Add to Pages, 3, 1&quot;);
+                      &quot;CASCADE_BUTTON, Create Plots and Pages for selected DPs..., 1&quot;,
+		                  &quot;SEPARATOR&quot;,
+		                  &quot;PUSH_BUTTON, Archive..., 300, 1&quot;,
+		                  &quot;PUSH_BUTTON, Alarms..., 301, 1&quot;,
+                      &quot;Add to Page selected DPs...&quot;);
+  trendingAddOption(txt, 100, dynlen(dps));
+/*
+//                      &quot;PUSH_BUTTON, All selected elements of each DP in one plot, 2, 1&quot;,
+//                      &quot;PUSH_BUTTON, Same selected element of all DPs in same plot, 3, 1&quot;,
+//                      &quot;PUSH_BUTTON, One selected element of each DP per plot, 4, 1&quot;);
+                      &quot;PUSH_BUTTON, One plot per DP containing all selected elements, 4, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element containing all DPs, 5, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element and per DP, 6, 1&quot;,
+*/
+  dynAppend(txt, &quot;Create Plots and Pages for selected DPs...&quot;);
+  trendingAddOption(txt, 200, dynlen(dps));
+/*
+//                      &quot;PUSH_BUTTON, All selected elements of each DP in one plot, 2, 1&quot;,
+//                      &quot;PUSH_BUTTON, Same selected element of all DPs in same plot, 3, 1&quot;,
+//                      &quot;PUSH_BUTTON, One selected element of each DP per plot, 4, 1&quot;);
+                      &quot;PUSH_BUTTON, One plot per DP containing all selected elements, 7, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element containing all DPs, 8, 1&quot;,
+                      &quot;PUSH_BUTTON, One plot per selected element and per DP, 9, 1&quot;);
+*/
+  trendingAddNOption(txt, 100, dynlen(dps));
+  trendingAddNOption(txt, 200, dynlen(dps));
+  popupMenu(txt, answer);
+//DebugN(txt, answer);
+//  DebugN(id, column, answer);
+//  dps = myTree.selectedItems();
+  for(i = 1; i &lt;= dynlen(dps); i++)
+  {
+    types[i] = myTree.parent(dps[i]);
+  }
+  if(answer == 300)
+  {
+//DebugTN(&quot;Archive&quot;,dps, types, curvesInPlots, PLOT_ALL);
+    getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+    lbTrending_archive(curvesInPlots[1]);
+  }
+  if(answer == 301) {
+    getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+    lbTrending_alarms(curvesInPlots[1]);
+  }
+  else if(answer == 1)
+  {
+    string selPage, selPlot, plot;
+    dyn_string exInfo, items;
+    int i, x, y;
+
+    selPage = lbTrending_getSelectedPage();
+    if(selPage == &quot;&quot;)
+    {
+      fwUi_informUser(&quot;Please select a page in the Trend Tree&quot;, 100, 100, &quot;Ok&quot;);
+      DebugTN(&quot;Please select a page&quot;);
+      return;
+    }
+    selPlot = lbTrending_getSelectedPlot();
+    if(selPlot == &quot;&quot;)
+    {
+      fwUi_informUser(&quot;Please select a plot in the Page Layout Configuration&quot;, 100, 100, &quot;Ok&quot;);
+      DebugTN(&quot;Please select a plot&quot;);
+      return;
+    }
+   getSelectedCurves(dps, types, curvesInPlots, PLOT_ALL);
+DebugN(&quot;in TreeRightClick&quot;, dps, curvesInPlots);
+   lbTrending_createPagesAndPlots(curvesInPlots, &quot;&quot;, selPage, selPlot);
+  }
+//  else if(answer &gt; 6)
+  else if(answer &gt; 200)
+  {
+    string selFolder, selPage, selPlot, plot;
+    dyn_string exInfo;
+    int i, pageNr, x, y, pageIndex;
+
+    selFolder = lbTrending_getSelectedFolder();
+    if(selFolder == &quot;&quot;)
+    {
+      fwUi_informUser(&quot;Please select a folder in the Trend Tree&quot;, 100, 100, &quot;Ok&quot;);
+      DebugTN(&quot;Please select a folder&quot;);
+      return;
+    }
+//   getSelectedCurves(dps, types, curvesInPlots, answer - 6);
+   getSelectedCurves(dps, types, curvesInPlots, answer - 200);
+//DebugN(curvesInPlots);
+   lbTrending_createPagesAndPlots(curvesInPlots, selFolder);
+  }
+//  else if(answer &gt; 3)
+  else if(answer &gt; 100)
+  {
+    string selPage, selPlot, plot;
+    dyn_string exInfo;
+    int i, pageNr, x, y, pageIndex;
+
+    selPage = lbTrending_getSelectedPage();
+    if(selPage == &quot;&quot;)
+    {
+      fwUi_informUser(&quot;Please select a page in the Trend Tree&quot;, 100, 100, &quot;Ok&quot;);
+      DebugTN(&quot;Please select a page&quot;);
+      return;
+    }
+//    getSelectedCurves(dps, types, curvesInPlots, answer - 3);
+    getSelectedCurves(dps, types, curvesInPlots, answer - 100);
+//DebugN(curvesInPlots);
+    lbTrending_createPagesAndPlots(curvesInPlots, &quot;&quot;, selPage);
+  }
+}
+
+lbTrending_archive(dyn_string dps, int ask = 1)
+{
+  dyn_float res;
+  dyn_string ret;
+  string list;
+
+  list = dps;
+  strreplace(list,&quot; | &quot;,&quot;,&quot;);
+  ChildPanelOnReturn(&quot;lbTrending/lbTrendingArchive.pnl&quot;,&quot;archive&quot;,makeDynString(list),100,30, res, ret);
+}
+
+lbTrending_alarms(dyn_string dps, int ask = 1)
+{
+  dyn_float res;
+  dyn_string ret;
+  string list;
+
+  list = dps;
+  strreplace(list,&quot; | &quot;,&quot;,&quot;);
+  ChildPanelOnReturn(&quot;lbTrending/lbTrendingAlarm.pnl&quot;,&quot;Alarms&quot;,makeDynString(list),100,30, res, ret);
+}
+
+
+]]></script>
+  <script name="Initialize" isEscaped="1"><![CDATA[main()
+{
+  treeInit();
+}
+]]></script>
+ </events>
+ <shapes>
+  <shape Name="myTree" shapeType="TREE" layerId="0">
+   <properties>
+    <prop name="serialId">0</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">30 30</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_WindowText</prop>
+    <prop name="BackColor">_Window</prop>
+    <prop name="TabOrder">0</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignCenter</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">30 30</prop>
+    <prop name="Size">281 471</prop>
+    <extended>
+     <script name="expanded" isEscaped="1"><![CDATA[expanded(string id)
+{
+  treeExpanded(id);
+}]]></script>
+     <script name="clicked" isEscaped="1"><![CDATA[clicked(string id, int column)
+{
+  treeClicked(id, column);
+}]]></script>
+     <script name="rightClicked" isEscaped="1"><![CDATA[rightClicked(string id, int column)
+{
+//DebugTN(&quot;TREE right click&quot;, id, column);
+  treeRightClicked(id, column);
+}]]></script>
+    </extended>
+   </properties>
+  </shape>
+  <shape Name="FRAME1" shapeType="FRAME" layerId="0">
+   <properties>
+    <prop name="serialId">1</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">10 448</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_3DText</prop>
+    <prop name="BackColor">_Transparent</prop>
+    <prop name="TabOrder">1</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignCenter</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="DashBackColor">_Transparent</prop>
+    <prop name="AntiAliased">False</prop>
+    <prop name="LineType">[solid,oneColor,JoinMiter,CapButt,1]</prop>
+    <prop name="BorderZoomable">False</prop>
+    <prop name="BorderScalable">False</prop>
+    <prop name="FillType">[outline]</prop>
+    <prop name="Geometry">1.115241635687732 0 0 1.319261213720317 8.847583643122682 -82.34828496042219</prop>
+    <prop name="BorderStyle">3D</prop>
+    <prop name="Text">
+     <prop name="en_US.utf8">Datapoint Tree</prop>
+    </prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">Arial,-1,13,5,40,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">10 70</prop>
+    <prop name="Size">270 380</prop>
+   </properties>
+  </shape>
+  <shape Name="InternalDps" shapeType="CHECK_BOX" layerId="0">
+   <properties>
+    <prop name="serialId">3</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">169 7.999999999999996</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_3DText</prop>
+    <prop name="BackColor">_3DFace</prop>
+    <prop name="TabOrder">2</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignNone</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">169 7.999999999999996</prop>
+    <prop name="Size">141 22</prop>
+    <prop name="Listitems">
+     <prop name="Item">
+      <prop name="Text">
+       <prop name="en_US.utf8">Show Internal Datapoints</prop>
+      </prop>
+      <prop name="Select">False</prop>
+     </prop>
+    </prop>
+   </properties>
+   <events>
+    <script name="Clicked" isEscaped="1"><![CDATA[main(int button, int state)
+{
+  treeRefresh(state);
+}]]></script>
+   </events>
+  </shape>
+ </shapes>
+</panel>
